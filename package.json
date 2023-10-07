@@ -1,15 +1,14 @@
 {
-  "name": "cleanway-skeleton",
-  "version": "2.6.1",
-  "description": "Write YourTest cases, fail fast and have a nice journey in the Node.js galaxy.",
+  "name": "@raccoons-co/dockerfile",
+  "version": "0.1.0",
+  "description": "The Dockerfile generation API.",
   "keywords": [
-    "TypeScript",
-    "Library",
-    "Template"
+    "Dockerfile",
+    "generation"
   ],
-  "homepage": "https://github.com/raccoons-co/cleanway-skeleton#readme",
+  "homepage": "https://github.com/raccoons-co/dockerfile#readme",
   "bugs": {
-    "url": "https://github.com/raccoons-co/cleanway-skeleton/issues"
+    "url": "https://github.com/raccoons-co/dockerfile/issues"
   },
   "license": "MIT",
   "author": "Raccoons <info@raccoons.co>",
@@ -20,16 +19,20 @@
   "types": "lib/main/index.d.ts",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/raccoons-co/cleanway-skeleton.git"
+    "url": "git+https://github.com/raccoons-co/dockerfile.git"
   },
   "scripts": {
     "build": "tsc",
+    "install_dev": "npm install",
+    "install_prod": "npm install --omit=dev --omit=optional --ignore-scripts",
     "lint.packagejson": "npmPkgJsonLint . --ignorePath .npmpackagejsonlintignore",
     "lint.typescript": "eslint './src/**/*.ts'",
     "postlint.typescript": "typedoc ./src/main/index.ts",
     "posttest": "npm-run-all lint.*",
     "prepack": "npm run build",
-    "test": "nyc ts-node src/test/EntryPoint"
+    "start": "npm run this.microservice",
+    "test": "nyc ts-node src/test/EntryPoint",
+    "this.microservice": "node dist/main/EntryPoint"
   },
   "dependencies": {
     "@raccoons-co/ethics": "^0.4.3"
@@ -55,5 +58,11 @@
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org/"
+  },
+  "docker": {
+    "image": "node:lts-alpine",
+    "user": "node",
+    "homedir": "/home/node",
+    "port": 80
   }
 }
