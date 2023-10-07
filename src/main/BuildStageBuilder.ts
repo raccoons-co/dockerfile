@@ -15,6 +15,6 @@ export default interface BuildStageBuilder {
     /** Adds layer to the build stage. */
     addLayer(...instructions: Array<Committable>): BuildStageBuilder;
 
-    /** Returns new Docker build stage instance. */
+    /** Returns a new Docker `BuildStage` instance. */
     build(): BuildStage;
 }

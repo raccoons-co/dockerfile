@@ -18,7 +18,7 @@ export default class CommentDirective extends AbstractInstruction implements Non
         super("#", value);
     }
 
-    /** Returns a new Comment instruction of given string. */
+    /** Returns a new `Comment` instruction of given string. */
     public static of(value: string): CommentDirective {
         return new CommentDirective(value);
     }

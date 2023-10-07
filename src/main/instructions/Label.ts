@@ -17,7 +17,7 @@ export default class Label extends AbstractInstruction implements Committable {
         super("LABEL", metadata);
     }
 
-    /** Returns a new Label instruction of given metadata. */
+    /** Returns a new `Label` instruction of given metadata. */
     public static ofMetadata(key: string, value: string): Label {
         Strict.notNull(key);
         Strict.notNull(value);

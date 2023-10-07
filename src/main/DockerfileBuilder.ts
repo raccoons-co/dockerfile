@@ -18,6 +18,6 @@ export default interface DockerfileBuilder {
     /** Adds build BuildStage. */
     addStage(stage: BuildStage): this;
 
-    /** Returns new Dockerfile instance. */
+    /** Returns new `Dockerfile` instance. */
     build(): Dockerfile;
 }

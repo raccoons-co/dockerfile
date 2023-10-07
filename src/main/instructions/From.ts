@@ -19,7 +19,7 @@ export default class From extends AbstractInstruction implements Committable {
         super("FROM", fromArgs);
     }
 
-    /** Returns a new From instruction of given image. */
+    /** Returns a new `From` instruction of given image. */
     public static of(image: string, maybeAs: Optional<string>): From {
         Strict.notNull(image);
         Strict.notNull(maybeAs);

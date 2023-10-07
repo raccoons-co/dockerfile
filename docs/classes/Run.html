@@ -30,7 +30,7 @@
 <ul class="tsd-hierarchy">
 <li><a href="../interfaces/Committable.html" class="tsd-signature-type tsd-kind-interface">Committable</a></li></ul></section><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/raccoons-co/dockerfile/blob/8bdc2e2/src/main/instructions/Run.ts#L13">instructions/Run.ts:13</a></li></ul></aside>
+<li>Defined in <a href="https://github.com/raccoons-co/dockerfile/blob/1020b90/src/main/instructions/Run.ts#L13">instructions/Run.ts:13</a></li></ul></aside>
 <section class="tsd-panel-group tsd-index-group">
 <section class="tsd-panel tsd-index-panel">
 <details class="tsd-index-content tsd-index-accordion" open><summary class="tsd-accordion-summary tsd-index-summary">
@@ -61,14 +61,16 @@
 <h4 class="tsd-returns-title">Returns <a href="Run.html" class="tsd-signature-type tsd-kind-class">Run</a></h4><aside class="tsd-sources">
 <p>Overrides AbstractInstruction.constructor</p>
 <ul>
-<li>Defined in <a href="https://github.com/raccoons-co/dockerfile/blob/8bdc2e2/src/main/instructions/Run.ts#L15">instructions/Run.ts:15</a></li></ul></aside></li></ul></section></section>
+<li>Defined in <a href="https://github.com/raccoons-co/dockerfile/blob/1020b90/src/main/instructions/Run.ts#L15">instructions/Run.ts:15</a></li></ul></aside></li></ul></section></section>
 <section class="tsd-panel-group tsd-member-group">
 <h2>Methods</h2>
 <section class="tsd-panel tsd-member tsd-is-inherited"><a id="accept" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>accept</span><a href="#accept" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-is-inherited">
 <li class="tsd-signature tsd-anchor-link" id="accept.accept-1"><span class="tsd-kind-call-signature">accept</span><span class="tsd-signature-symbol">(</span><span class="tsd-kind-parameter">writer</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span><a href="#accept.accept-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></li>
-<li class="tsd-description">
+<li class="tsd-description"><code class="tsd-tag ts-flagInternal">Internal</code> 
+<div class="tsd-comment tsd-typography"><p>Adds string representation of this instruction to <code>DockerfileWriter</code></p>
+</div>
 <div class="tsd-parameters">
 <h4 class="tsd-parameters-title">Parameters</h4>
 <ul class="tsd-parameter-list">
@@ -79,7 +81,7 @@
 <p>Implementation of <a href="../interfaces/Committable.html">Committable</a>.<a href="../interfaces/Committable.html#accept">accept</a></p>
 <p>Inherited from AbstractInstruction.accept</p>
 <ul>
-<li>Defined in <a href="https://github.com/raccoons-co/dockerfile/blob/8bdc2e2/src/main/instructions/AbstractInstruction.ts#L30">instructions/AbstractInstruction.ts:30</a></li></ul></aside></li></ul></section>
+<li>Defined in <a href="https://github.com/raccoons-co/dockerfile/blob/1020b90/src/main/instructions/AbstractInstruction.ts#L34">instructions/AbstractInstruction.ts:34</a></li></ul></aside></li></ul></section>
 <section class="tsd-panel tsd-member tsd-is-inherited"><a id="toString" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>to<wbr/>String</span><a href="#toString" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-is-inherited">
@@ -91,13 +93,13 @@
 <div class="tsd-comment tsd-typography"></div><aside class="tsd-sources">
 <p>Inherited from AbstractInstruction.toString</p>
 <ul>
-<li>Defined in <a href="https://github.com/raccoons-co/dockerfile/blob/8bdc2e2/src/main/instructions/AbstractInstruction.ts#L25">instructions/AbstractInstruction.ts:25</a></li></ul></aside></li></ul></section>
+<li>Defined in <a href="https://github.com/raccoons-co/dockerfile/blob/1020b90/src/main/instructions/AbstractInstruction.ts#L25">instructions/AbstractInstruction.ts:25</a></li></ul></aside></li></ul></section>
 <section class="tsd-panel tsd-member"><a id="of" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagStatic">Static</code> <span>of</span><a href="#of" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
 <li class="tsd-signature tsd-anchor-link" id="of.of-1"><span class="tsd-kind-call-signature">of</span><span class="tsd-signature-symbol">(</span><span class="tsd-kind-parameter">command</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="Run.html" class="tsd-signature-type tsd-kind-class">Run</a><a href="#of.of-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></li>
 <li class="tsd-description">
-<div class="tsd-comment tsd-typography"><p>Returns a new Copy instruction of given arguments.</p>
+<div class="tsd-comment tsd-typography"><p>Returns a new <code>Run</code> instruction of given arguments.</p>
 </div>
 <div class="tsd-parameters">
 <h4 class="tsd-parameters-title">Parameters</h4>
@@ -107,7 +109,7 @@
 <h4 class="tsd-returns-title">Returns <a href="Run.html" class="tsd-signature-type tsd-kind-class">Run</a></h4>
 <div class="tsd-comment tsd-typography"></div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/raccoons-co/dockerfile/blob/8bdc2e2/src/main/instructions/Run.ts#L20">instructions/Run.ts:20</a></li></ul></aside></li></ul></section></section></div>
+<li>Defined in <a href="https://github.com/raccoons-co/dockerfile/blob/1020b90/src/main/instructions/Run.ts#L20">instructions/Run.ts:20</a></li></ul></aside></li></ul></section></section></div>
 <div class="col-sidebar">
 <div class="page-menu">
 <div class="tsd-navigation settings">

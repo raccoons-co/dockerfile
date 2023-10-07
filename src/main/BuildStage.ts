@@ -26,7 +26,7 @@ export default class BuildStage {
         this.maybeName = maybeName;
     }
 
-    /** Returns new builder of a new Docker build stage initialization. */
+    /** Returns a new Docker `InitBuildStageBuilder` instance. */
     public static newBuilder(): InitBuildStageBuilder {
         return new class implements InitBuildStageBuilder, BuildStageBuilder {
 
@@ -41,15 +41,13 @@ export default class BuildStage {
 
             /** {@inheritDoc} */
             public setName(name: string): InitBuildStageBuilder {
-                Strict.notNull(name);
                 this.maybeName = Optional.of(name);
                 return this;
             }
 
             /** {@inheritDoc} */
             public setFrom(image: string): BuildStageBuilder {
-                Strict.notNull(image);
-                this.image = image;
+                this.image = Strict.notNull(image);
                 return this;
             }
 
@@ -63,7 +61,11 @@ export default class BuildStage {
 
             /** {@inheritDoc} */
             build(): BuildStage {
-                const instructions = Array.of(From.of(this.image, this.maybeName), ...this.instructions);
+                const instructions =
+                    Array.of(
+                        From.of(this.image, this.maybeName),
+                        ...this.instructions
+                    );
                 return new BuildStage(instructions, this.maybeName);
             }
         };

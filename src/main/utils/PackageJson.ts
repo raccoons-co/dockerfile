@@ -19,7 +19,7 @@ export default class PackageJson {
         // Intentionally empty
     }
 
-    /** Returns `Package.json` as object. */
+    /** Returns `Package.json` of current project as object. */
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     public static toObject(): any {
         return JSON.parse(PackageJson.packageJsonContent());

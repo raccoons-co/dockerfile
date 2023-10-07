@@ -16,7 +16,7 @@ export default class Cmd extends AbstractInstruction implements Committable {
         super("CMD", command);
     }
 
-    /** Returns a new Cmd instruction of given arguments. */
+    /** Returns a new `Cmd` instruction of given arguments. */
     public static of(command: string): Cmd {
         return new Cmd(command);
     }

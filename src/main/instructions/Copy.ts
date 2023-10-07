@@ -7,6 +7,7 @@
 import AbstractInstruction from "./AbstractInstruction";
 import Committable from "./Committable";
 import {Optional, Strict} from "@raccoons-co/ethics";
+import BuildStage from "../BuildStage";
 
 /**
  * Represents a {@link https://docs.docker.com/engine/reference/builder/#copy | COPY} instruction.
@@ -34,15 +35,15 @@ export default class Copy extends AbstractInstruction implements Committable {
         return new Copy(`--link ${source} ${destination}`);
     }
 
-    /** Returns a new Copy instruction of given source and destination arguments from previous build stage. */
-    public static ofFrom(stageName: string, source: string, destination: string): Copy {
-        Strict.notNull(stageName);
+    /** Returns a new Copy instruction of given source and destination arguments from given build stage. */
+    public static fromStage(stage: BuildStage, source: string, destination: string): Copy {
+        Strict.notNull(stage);
         Strict.notNull(source);
         Strict.notNull(destination);
-        return new Copy(`--from=${stageName} ${source} ${destination}`);
+        return new Copy(`--from=${stage.name()} ${source} ${destination}`);
     }
 
-    public static ofChown(source: string, destination: string, chown: string, chmod?: string): Copy {
+    public static withChown(source: string, destination: string, chown: string, chmod?: string): Copy {
         Strict.notNull(source);
         Strict.notNull(destination);
         Strict.notNull(chown);

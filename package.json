@@ -31,7 +31,8 @@
     "posttest": "npm-run-all lint.*",
     "prepack": "npm run build",
     "start": "npm run this.microservice",
-    "test": "nyc ts-node src/test/EntryPoint"
+    "test": "nyc ts-node src/test/EntryPoint",
+    "this.microservice": "node dist/main/EntryPoint"
   },
   "dependencies": {
     "@raccoons-co/ethics": "^0.4.3"

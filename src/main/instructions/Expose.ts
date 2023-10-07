@@ -17,7 +17,7 @@ export default class Expose extends AbstractInstruction implements Committable {
         super("EXPOSE", port);
     }
 
-    /** Returns a new Copy instruction of given TCP port. */
+    /** Returns a new `Expose` instruction of given TCP port. */
     public static ofTcp(port: number): Expose {
         Expose.isValid(port);
         return new Expose(`${port.toString()}/tcp`);

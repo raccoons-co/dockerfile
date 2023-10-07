@@ -18,7 +18,7 @@ export default class Arg extends AbstractInstruction implements Committable {
         super("ARG", command);
     }
 
-    /** Returns a new Arg instruction of given name and optional default value. */
+    /** Returns a new `Arg` instruction of given name and optional default value. */
     public static of(name: string, defaultValue?: string): Arg {
         Strict.notNull(name);
         const maybeDefaultValue = Optional.ofNullable(defaultValue);
@@ -27,7 +27,7 @@ export default class Arg extends AbstractInstruction implements Committable {
             : new Arg(`${name}=${maybeDefaultValue.get()}`);
     }
 
-    /** Returns a new Arg instruction of given automatic platform variable name. */
+    /** Returns a new `Arg` instruction of given automatic platform variable name. */
     public static ofAutomatic(name: AutomaticArg): Arg {
         return new Arg(name);
     }

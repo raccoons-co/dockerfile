@@ -17,7 +17,7 @@ export default class Workdir extends AbstractInstruction implements Committable 
         super("WORKDIR", path);
     }
 
-    /** Returns a new Workdir instruction of given path. */
+    /** Returns a new `Workdir` instruction of given path. */
     public static of(path: string): DockerfileInstruction {
         return new Workdir(path);
     }

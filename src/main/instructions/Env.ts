@@ -17,7 +17,7 @@ export default class Env extends AbstractInstruction implements Committable {
         super("ENV", variable);
     }
 
-    /** Returns a new Env instruction of given environment variable specified with key and value. */
+    /** Returns a new `Env` instruction of given environment variable specified with key and value. */
     public static of(key: string, value: string): Env {
         Strict.notNull(key);
         Strict.notNull(value);

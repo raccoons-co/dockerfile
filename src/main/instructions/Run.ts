@@ -16,7 +16,7 @@ export default class Run extends AbstractInstruction implements Committable {
         super("RUN", command);
     }
 
-    /** Returns a new Copy instruction of given arguments. */
+    /** Returns a new `Run` instruction of given arguments. */
     public static of(command: string): Run {
         return new Run(command);
     }

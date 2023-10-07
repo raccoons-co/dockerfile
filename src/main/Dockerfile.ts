@@ -32,7 +32,7 @@ export default class Dockerfile {
         this.buildStages = buildStages;
     }
 
-    /** Returns a new instance of the Dockerfile builder. */
+    /** Returns a new instance of the `DockerfileBuilder`. */
     public static newBuilder(): DockerfileBuilder {
         return new class implements DockerfileBuilder {
 
@@ -87,6 +87,11 @@ export default class Dockerfile {
         return path.join(this.dockerfileDirectory, this.dockerfileName);
     }
 
+    /**
+     * Returns Dockerfile build stages.
+     *
+     * @internal
+     */
     public stages(): ReadonlyArray<BuildStage> {
         return this.buildStages;
     }

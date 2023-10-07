@@ -26,7 +26,11 @@ export default abstract class AbstractInstruction {
         return `${this.instructionKeyword} ${this.instructionArguments}`;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * Adds string representation of this instruction to `DockerfileWriter`
+     *
+     * @internal
+     */
     public accept(writer: DockerfileWriter): void {
         Strict.notNull(writer);
         writer.addRow(this.toString());

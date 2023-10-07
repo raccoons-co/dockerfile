@@ -30,7 +30,7 @@
 <ul class="tsd-hierarchy">
 <li><a href="../interfaces/Committable.html" class="tsd-signature-type tsd-kind-interface">Committable</a></li></ul></section><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/raccoons-co/dockerfile/blob/8bdc2e2/src/main/instructions/Copy.ts#L14">instructions/Copy.ts:14</a></li></ul></aside>
+<li>Defined in <a href="https://github.com/raccoons-co/dockerfile/blob/1020b90/src/main/instructions/Copy.ts#L15">instructions/Copy.ts:15</a></li></ul></aside>
 <section class="tsd-panel-group tsd-index-group">
 <section class="tsd-panel tsd-index-panel">
 <details class="tsd-index-content tsd-index-accordion" open><summary class="tsd-accordion-summary tsd-index-summary">
@@ -44,10 +44,10 @@
 <h3 class="tsd-index-heading">Methods</h3>
 <div class="tsd-index-list"><a href="Copy.html#accept" class="tsd-index-link tsd-is-inherited"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2048"></use></svg><span>accept</span></a>
 <a href="Copy.html#toString" class="tsd-index-link tsd-is-inherited"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2048"></use></svg><span>to<wbr/>String</span></a>
+<a href="Copy.html#fromStage" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2048"></use></svg><span>from<wbr/>Stage</span></a>
 <a href="Copy.html#of" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2048"></use></svg><span>of</span></a>
-<a href="Copy.html#ofChown" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2048"></use></svg><span>of<wbr/>Chown</span></a>
-<a href="Copy.html#ofFrom" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2048"></use></svg><span>of<wbr/>From</span></a>
 <a href="Copy.html#ofLink" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2048"></use></svg><span>of<wbr/>Link</span></a>
+<a href="Copy.html#withChown" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2048"></use></svg><span>with<wbr/>Chown</span></a>
 </div></section></div></details></section></section>
 <section class="tsd-panel-group tsd-member-group">
 <h2>Constructors</h2>
@@ -64,14 +64,16 @@
 <h4 class="tsd-returns-title">Returns <a href="Copy.html" class="tsd-signature-type tsd-kind-class">Copy</a></h4><aside class="tsd-sources">
 <p>Overrides AbstractInstruction.constructor</p>
 <ul>
-<li>Defined in <a href="https://github.com/raccoons-co/dockerfile/blob/8bdc2e2/src/main/instructions/Copy.ts#L16">instructions/Copy.ts:16</a></li></ul></aside></li></ul></section></section>
+<li>Defined in <a href="https://github.com/raccoons-co/dockerfile/blob/1020b90/src/main/instructions/Copy.ts#L17">instructions/Copy.ts:17</a></li></ul></aside></li></ul></section></section>
 <section class="tsd-panel-group tsd-member-group">
 <h2>Methods</h2>
 <section class="tsd-panel tsd-member tsd-is-inherited"><a id="accept" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>accept</span><a href="#accept" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-is-inherited">
 <li class="tsd-signature tsd-anchor-link" id="accept.accept-1"><span class="tsd-kind-call-signature">accept</span><span class="tsd-signature-symbol">(</span><span class="tsd-kind-parameter">writer</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span><a href="#accept.accept-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></li>
-<li class="tsd-description">
+<li class="tsd-description"><code class="tsd-tag ts-flagInternal">Internal</code> 
+<div class="tsd-comment tsd-typography"><p>Adds string representation of this instruction to <code>DockerfileWriter</code></p>
+</div>
 <div class="tsd-parameters">
 <h4 class="tsd-parameters-title">Parameters</h4>
 <ul class="tsd-parameter-list">
@@ -82,7 +84,7 @@
 <p>Implementation of <a href="../interfaces/Committable.html">Committable</a>.<a href="../interfaces/Committable.html#accept">accept</a></p>
 <p>Inherited from AbstractInstruction.accept</p>
 <ul>
-<li>Defined in <a href="https://github.com/raccoons-co/dockerfile/blob/8bdc2e2/src/main/instructions/AbstractInstruction.ts#L30">instructions/AbstractInstruction.ts:30</a></li></ul></aside></li></ul></section>
+<li>Defined in <a href="https://github.com/raccoons-co/dockerfile/blob/1020b90/src/main/instructions/AbstractInstruction.ts#L34">instructions/AbstractInstruction.ts:34</a></li></ul></aside></li></ul></section>
 <section class="tsd-panel tsd-member tsd-is-inherited"><a id="toString" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>to<wbr/>String</span><a href="#toString" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-is-inherited">
@@ -94,7 +96,27 @@
 <div class="tsd-comment tsd-typography"></div><aside class="tsd-sources">
 <p>Inherited from AbstractInstruction.toString</p>
 <ul>
-<li>Defined in <a href="https://github.com/raccoons-co/dockerfile/blob/8bdc2e2/src/main/instructions/AbstractInstruction.ts#L25">instructions/AbstractInstruction.ts:25</a></li></ul></aside></li></ul></section>
+<li>Defined in <a href="https://github.com/raccoons-co/dockerfile/blob/1020b90/src/main/instructions/AbstractInstruction.ts#L25">instructions/AbstractInstruction.ts:25</a></li></ul></aside></li></ul></section>
+<section class="tsd-panel tsd-member"><a id="fromStage" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagStatic">Static</code> <span>from<wbr/>Stage</span><a href="#fromStage" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
+<ul class="tsd-signatures">
+<li class="tsd-signature tsd-anchor-link" id="fromStage.fromStage-1"><span class="tsd-kind-call-signature">from<wbr/>Stage</span><span class="tsd-signature-symbol">(</span><span class="tsd-kind-parameter">stage</span>, <span class="tsd-kind-parameter">source</span>, <span class="tsd-kind-parameter">destination</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="Copy.html" class="tsd-signature-type tsd-kind-class">Copy</a><a href="#fromStage.fromStage-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></li>
+<li class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Returns a new Copy instruction of given source and destination arguments from given build stage.</p>
+</div>
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li>
+<h5><span class="tsd-kind-parameter">stage</span>: <a href="BuildStage.html" class="tsd-signature-type tsd-kind-class">BuildStage</a></h5></li>
+<li>
+<h5><span class="tsd-kind-parameter">source</span>: <span class="tsd-signature-type">string</span></h5></li>
+<li>
+<h5><span class="tsd-kind-parameter">destination</span>: <span class="tsd-signature-type">string</span></h5></li></ul></div>
+<h4 class="tsd-returns-title">Returns <a href="Copy.html" class="tsd-signature-type tsd-kind-class">Copy</a></h4>
+<div class="tsd-comment tsd-typography"></div><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/raccoons-co/dockerfile/blob/1020b90/src/main/instructions/Copy.ts#L39">instructions/Copy.ts:39</a></li></ul></aside></li></ul></section>
 <section class="tsd-panel tsd-member"><a id="of" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagStatic">Static</code> <span>of</span><a href="#of" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -112,46 +134,7 @@
 <h4 class="tsd-returns-title">Returns <a href="Copy.html" class="tsd-signature-type tsd-kind-class">Copy</a></h4>
 <div class="tsd-comment tsd-typography"></div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/raccoons-co/dockerfile/blob/8bdc2e2/src/main/instructions/Copy.ts#L21">instructions/Copy.ts:21</a></li></ul></aside></li></ul></section>
-<section class="tsd-panel tsd-member"><a id="ofChown" class="tsd-anchor"></a>
-<h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagStatic">Static</code> <span>of<wbr/>Chown</span><a href="#ofChown" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
-<ul class="tsd-signatures">
-<li class="tsd-signature tsd-anchor-link" id="ofChown.ofChown-1"><span class="tsd-kind-call-signature">of<wbr/>Chown</span><span class="tsd-signature-symbol">(</span><span class="tsd-kind-parameter">source</span>, <span class="tsd-kind-parameter">destination</span>, <span class="tsd-kind-parameter">chown</span>, <span class="tsd-kind-parameter">chmod</span><span class="tsd-signature-symbol">?</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="Copy.html" class="tsd-signature-type tsd-kind-class">Copy</a><a href="#ofChown.ofChown-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></li>
-<li class="tsd-description">
-<div class="tsd-parameters">
-<h4 class="tsd-parameters-title">Parameters</h4>
-<ul class="tsd-parameter-list">
-<li>
-<h5><span class="tsd-kind-parameter">source</span>: <span class="tsd-signature-type">string</span></h5></li>
-<li>
-<h5><span class="tsd-kind-parameter">destination</span>: <span class="tsd-signature-type">string</span></h5></li>
-<li>
-<h5><span class="tsd-kind-parameter">chown</span>: <span class="tsd-signature-type">string</span></h5></li>
-<li>
-<h5><code class="tsd-tag ts-flagOptional">Optional</code> <span class="tsd-kind-parameter">chmod</span>: <span class="tsd-signature-type">string</span></h5></li></ul></div>
-<h4 class="tsd-returns-title">Returns <a href="Copy.html" class="tsd-signature-type tsd-kind-class">Copy</a></h4><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/raccoons-co/dockerfile/blob/8bdc2e2/src/main/instructions/Copy.ts#L45">instructions/Copy.ts:45</a></li></ul></aside></li></ul></section>
-<section class="tsd-panel tsd-member"><a id="ofFrom" class="tsd-anchor"></a>
-<h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagStatic">Static</code> <span>of<wbr/>From</span><a href="#ofFrom" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
-<ul class="tsd-signatures">
-<li class="tsd-signature tsd-anchor-link" id="ofFrom.ofFrom-1"><span class="tsd-kind-call-signature">of<wbr/>From</span><span class="tsd-signature-symbol">(</span><span class="tsd-kind-parameter">stageName</span>, <span class="tsd-kind-parameter">source</span>, <span class="tsd-kind-parameter">destination</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="Copy.html" class="tsd-signature-type tsd-kind-class">Copy</a><a href="#ofFrom.ofFrom-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></li>
-<li class="tsd-description">
-<div class="tsd-comment tsd-typography"><p>Returns a new Copy instruction of given source and destination arguments from previous build stage.</p>
-</div>
-<div class="tsd-parameters">
-<h4 class="tsd-parameters-title">Parameters</h4>
-<ul class="tsd-parameter-list">
-<li>
-<h5><span class="tsd-kind-parameter">stageName</span>: <span class="tsd-signature-type">string</span></h5></li>
-<li>
-<h5><span class="tsd-kind-parameter">source</span>: <span class="tsd-signature-type">string</span></h5></li>
-<li>
-<h5><span class="tsd-kind-parameter">destination</span>: <span class="tsd-signature-type">string</span></h5></li></ul></div>
-<h4 class="tsd-returns-title">Returns <a href="Copy.html" class="tsd-signature-type tsd-kind-class">Copy</a></h4>
-<div class="tsd-comment tsd-typography"></div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/raccoons-co/dockerfile/blob/8bdc2e2/src/main/instructions/Copy.ts#L38">instructions/Copy.ts:38</a></li></ul></aside></li></ul></section>
+<li>Defined in <a href="https://github.com/raccoons-co/dockerfile/blob/1020b90/src/main/instructions/Copy.ts#L22">instructions/Copy.ts:22</a></li></ul></aside></li></ul></section>
 <section class="tsd-panel tsd-member"><a id="ofLink" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagStatic">Static</code> <span>of<wbr/>Link</span><a href="#ofLink" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -170,7 +153,26 @@
 <h4 class="tsd-returns-title">Returns <a href="Copy.html" class="tsd-signature-type tsd-kind-class">Copy</a></h4>
 <div class="tsd-comment tsd-typography"></div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/raccoons-co/dockerfile/blob/8bdc2e2/src/main/instructions/Copy.ts#L31">instructions/Copy.ts:31</a></li></ul></aside></li></ul></section></section></div>
+<li>Defined in <a href="https://github.com/raccoons-co/dockerfile/blob/1020b90/src/main/instructions/Copy.ts#L32">instructions/Copy.ts:32</a></li></ul></aside></li></ul></section>
+<section class="tsd-panel tsd-member"><a id="withChown" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagStatic">Static</code> <span>with<wbr/>Chown</span><a href="#withChown" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
+<ul class="tsd-signatures">
+<li class="tsd-signature tsd-anchor-link" id="withChown.withChown-1"><span class="tsd-kind-call-signature">with<wbr/>Chown</span><span class="tsd-signature-symbol">(</span><span class="tsd-kind-parameter">source</span>, <span class="tsd-kind-parameter">destination</span>, <span class="tsd-kind-parameter">chown</span>, <span class="tsd-kind-parameter">chmod</span><span class="tsd-signature-symbol">?</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="Copy.html" class="tsd-signature-type tsd-kind-class">Copy</a><a href="#withChown.withChown-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></li>
+<li class="tsd-description">
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li>
+<h5><span class="tsd-kind-parameter">source</span>: <span class="tsd-signature-type">string</span></h5></li>
+<li>
+<h5><span class="tsd-kind-parameter">destination</span>: <span class="tsd-signature-type">string</span></h5></li>
+<li>
+<h5><span class="tsd-kind-parameter">chown</span>: <span class="tsd-signature-type">string</span></h5></li>
+<li>
+<h5><code class="tsd-tag ts-flagOptional">Optional</code> <span class="tsd-kind-parameter">chmod</span>: <span class="tsd-signature-type">string</span></h5></li></ul></div>
+<h4 class="tsd-returns-title">Returns <a href="Copy.html" class="tsd-signature-type tsd-kind-class">Copy</a></h4><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/raccoons-co/dockerfile/blob/1020b90/src/main/instructions/Copy.ts#L46">instructions/Copy.ts:46</a></li></ul></aside></li></ul></section></section></div>
 <div class="col-sidebar">
 <div class="page-menu">
 <div class="tsd-navigation settings">
@@ -193,10 +195,10 @@
 <li><a href="#constructor" class="tsd-is-private"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-512"></use></svg><span>constructor</span></a></li>
 <li><a href="#accept" class="tsd-is-inherited"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2048"></use></svg><span>accept</span></a></li>
 <li><a href="#toString" class="tsd-is-inherited"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2048"></use></svg><span>to<wbr/>String</span></a></li>
+<li><a href="#fromStage" class=""><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2048"></use></svg><span>from<wbr/>Stage</span></a></li>
 <li><a href="#of" class=""><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2048"></use></svg><span>of</span></a></li>
-<li><a href="#ofChown" class=""><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2048"></use></svg><span>of<wbr/>Chown</span></a></li>
-<li><a href="#ofFrom" class=""><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2048"></use></svg><span>of<wbr/>From</span></a></li>
-<li><a href="#ofLink" class=""><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2048"></use></svg><span>of<wbr/>Link</span></a></li></ul></div></details></div>
+<li><a href="#ofLink" class=""><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2048"></use></svg><span>of<wbr/>Link</span></a></li>
+<li><a href="#withChown" class=""><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2048"></use></svg><span>with<wbr/>Chown</span></a></li></ul></div></details></div>
 <div class="site-menu">
 <nav class="tsd-navigation"><a href="../modules.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-1"></use></svg><span>@raccoons-co/dockerfile</span></a>
 <ul class="tsd-small-nested-navigation" id="tsd-nav-container" data-base="..">
