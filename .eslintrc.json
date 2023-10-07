@@ -1,0 +1,44 @@
+{
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended"
+  ],
+  "noInlineConfig": false,
+  "parser": "@typescript-eslint/parser",
+  "plugins": [
+    "@typescript-eslint/eslint-plugin",
+    "eslint-plugin-tsdoc"
+  ],
+  "reportUnusedDisableDirectives": true,
+  "root": true,
+  "rules": {
+    "eol-last": [
+      "warn",
+      "always"
+    ],
+    "indent": "off",
+    "@typescript-eslint/indent": ["warn"],
+    "max-len": [
+      "warn",
+      120
+    ],
+    "max-lines": [
+      "warn",
+      150
+    ],
+    "no-unused-vars": "off",
+    "@typescript-eslint/no-unused-vars": [
+      "warn",
+      {
+        "args": "all"
+      }
+    ],
+    "quotes": [
+      "warn",
+      "double"
+    ],
+    "semi": "off",
+    "@typescript-eslint/semi": "warn",
+    "tsdoc/syntax": "warn"
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "rules": {
+    "require-name": "error",
+    "name-type": "error",
+    "name-format": "error",
+
+    "require-version": "error",
+    "version-type": "error",
+    "version-format": "error",
+
+    "require-description": "error",
+    "description-type": "error",
+
+    "require-keywords": "error",
+    "keywords-type": "error",
+
+    "require-homepage": "error",
+    "homepage-type": "error",
+
+    "require-bugs": "error",
+
+    "require-license": "error",
+    "license-type": "error",
+    "valid-values-license": ["error", [
+      "MIT"
+    ]],
+
+    "require-author": "error",
+    "valid-values-author": ["error", [
+      "Raccoons <info@raccoons.co>"
+    ]],
+
+    "require-files": "error",
+    "files-type": "error",
+
+    "require-main": "error",
+    "main-type": "error",
+
+    "require-types": "error",
+
+    "require-repository": "error",
+    "repository-type": "error",
+
+    "require-scripts": "error",
+    "scripts-type": "error",
+    "prefer-alphabetical-scripts": "error",
+
+    "require-engines": "error",
+    "engines-type": "error",
+
+    "require-publishConfig": "error",
+    "valid-values-publishConfig": ["error", [
+      { "access": "public", "registry": "https://registry.npmjs.org/" }
+    ]]
+  }
+}
