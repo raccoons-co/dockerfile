@@ -1,7 +1,7 @@
 [![npm version](https://badge.fury.io/js/@raccoons-co%2Fdockerfile.svg)](https://badge.fury.io/js/@raccoons-co%2Fdockerfile)
 [![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=raccoons-co_cleanway&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=raccoons-co_cleanway)
 [![codecov](https://codecov.io/gh/raccoons-co/dockerfile/graph/badge.svg?token=uksCzUBmwv)](https://codecov.io/gh/raccoons-co/dockerfile)
-[![CircleCI](https://dl.circleci.com/status-badge/img/gh/raccoons-co/cleanway-skeleton/tree/master.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/raccoons-co/cleanway-skeleton/tree/main)
+[![CircleCI](https://dl.circleci.com/status-badge/img/gh/raccoons-co/dockerfile/tree/master.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/raccoons-co/dockerfile/tree/main)
 
 The Dockerfile generation API
 ---
