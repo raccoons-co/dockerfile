@@ -1,47 +1,24 @@
 version: 2.1
 
 orbs:
-  node: circleci/node@5.1.0
   codecov: codecov/codecov@3.2.5
-
-executors:
-  docker:
-    docker:
-      - image: cimg/base:current
-  linux:
-    machine:
-      image: ubuntu-2004:current
-  macos:
-    macos:
-      xcode: 14.3.1
+  terraform: circleci/terraform@3.2.1
 
 jobs:
-  multiple-test:
-    parameters:
-      os:
-        type: executor
-      node-version:
-        type: string
-    executor: << parameters.os >>
+  test:
+    docker:
+      - image: cimg/node:lts
     steps:
+      - setup_remote_docker:
+          version: 20.10.23
       - checkout
-      - node/install:
-          node-version: << parameters.node-version >>
       - run: npm ci
       - run: npm test
       - run: npm pack
+      - codecov/upload:
+          xtra_args: "--nonZero"
 
 workflows:
   simple:
     jobs:
-      - multiple-test:
-          name: test-node-<< matrix.node-version >>-<< matrix.os >>
-          matrix:
-            parameters:
-              os: [docker, linux, macos]
-              node-version: ["latest", "lts"]
-      - node/test:
-          name: upload-code-coverage
-          post-steps:
-            - codecov/upload:
-                xtra_args: "--nonZero"
+      - test
