@@ -7,10 +7,10 @@
 import {Strict} from "@raccoons-co/ethics";
 import * as path from "path";
 import BuildStage from "./BuildStage";
+import DockerfileBuilder from "./DockerfileBuilder";
 import DockerfileInstruction from "./instructions/DockerfileInstruction";
 import CommentDirective from "./instructions/CommentDirective";
 import DockerfileWriter from "./utils/DockerfileWriter";
-import DockerfileBuilder from "./DockerfileBuilder";
 
 /**
  * Represents a Dockerfile that can be synthesized into a file on the filesystem.
@@ -72,23 +72,23 @@ export default class Dockerfile {
         };
     }
 
-    /** Returns Dockerfile name. */
+    /** Returns the Dockerfile name. */
     public name(): string {
         return this.dockerfileName;
     }
 
-    /** Returns Dockerfile directory. */
+    /** Returns the Dockerfile directory. */
     public directory(): string {
         return this.dockerfileDirectory;
     }
 
-    /** Returns Dockerfile path. */
+    /** Returns the Dockerfile path. */
     public path(): string {
         return path.join(this.dockerfileDirectory, this.dockerfileName);
     }
 
     /**
-     * Returns Dockerfile build stages.
+     * Returns the Dockerfile build stages.
      *
      * @internal
      */

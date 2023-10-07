@@ -7,7 +7,7 @@
 import DockerfileWriter from "../utils/DockerfileWriter";
 
 /**
- * Represents Dockerfile instruction.
+ * Represents a Dockerfile instruction.
  */
 export default interface DockerfileInstruction {
 

@@ -31,13 +31,13 @@ export default class DockerfileWriter {
         this.fileContent = [];
     }
 
-    /** Returns a new DockerfileWriter instance of given Dockerfile. */
+    /** Returns a new instance of the DockerfileWriter of given Dockerfile. */
     public static of(dockerfile: Dockerfile): DockerfileWriter {
         Strict.notNull(dockerfile);
         return new DockerfileWriter(dockerfile.directory(), dockerfile.name());
     }
 
-    /** Adds row string to the file content. */
+    /** Adds a row string to the file content. */
     public addRow(row: string): void {
         Strict.notNull(row);
         this.fileContent.push(row);

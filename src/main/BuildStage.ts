@@ -26,7 +26,7 @@ export default class BuildStage {
         this.maybeName = maybeName;
     }
 
-    /** Returns a new Docker `InitBuildStageBuilder` instance. */
+    /** Returns a new instance of the Docker `BuildStageBuilder`. */
     public static newBuilder(): InitBuildStageBuilder {
         return new class implements InitBuildStageBuilder, BuildStageBuilder {
 
@@ -58,7 +58,6 @@ export default class BuildStage {
                 return this;
             }
 
-
             /** {@inheritDoc} */
             build(): BuildStage {
                 const instructions =
@@ -71,13 +70,13 @@ export default class BuildStage {
         };
     }
 
+    /** Returns the build stage name. */
+    public name(): string {
+        return this.maybeName.orElseThrow();
+    }
+
     /** Returns all Dockerfile instructions for this build stage. */
     public instructions(): ReadonlyArray<DockerfileInstruction> {
         return this.stageInstructions;
-    }
-
-    /** Returns build stage name. */
-    public name(): string {
-        return this.maybeName.orElseThrow();
     }
 }

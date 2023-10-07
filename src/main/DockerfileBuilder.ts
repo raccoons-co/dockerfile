@@ -9,15 +9,15 @@ import Dockerfile from "./Dockerfile";
 
 export default interface DockerfileBuilder {
 
-    /** Sets Dockerfile name. */
+    /** Sets the Dockerfile name. */
     setName(name: string): this
 
-    /** Sets Dockerfile output directory. */
+    /** Sets the Dockerfile output directory. */
     setOutDir(path: string): this
 
-    /** Adds build BuildStage. */
+    /** Adds the build stage. */
     addStage(stage: BuildStage): this;
 
-    /** Returns new `Dockerfile` instance. */
+    /** Returns a new instance of the `Dockerfile`. */
     build(): Dockerfile;
 }

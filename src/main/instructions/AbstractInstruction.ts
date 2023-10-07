@@ -27,7 +27,7 @@ export default abstract class AbstractInstruction {
     }
 
     /**
-     * Adds string representation of this instruction to `DockerfileWriter`
+     * Adds the string representation of this instruction to `DockerfileWriter`
      *
      * @internal
      */

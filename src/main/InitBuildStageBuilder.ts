@@ -7,11 +7,11 @@
 import BuildStageBuilder from "./BuildStageBuilder";
 
 /**
- * The builder of a new Docker build stage initialisation.
+ * An initialisation interface of the Docker build stage builder.
  */
 export default interface InitBuildStageBuilder {
 
-    /** Sets build stage name. */
+    /** Sets the build stage name. */
     setName(name: string): InitBuildStageBuilder;
 
     /** Sets the image for subsequent instructions.  */

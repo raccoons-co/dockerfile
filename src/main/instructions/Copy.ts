@@ -18,7 +18,7 @@ export default class Copy extends AbstractInstruction implements Committable {
         super("COPY", copyArgs);
     }
 
-    /** Returns a new Copy instruction of given source and destination arguments. */
+    /** Returns a new `Copy` instruction of given source and destination arguments. */
     public static of(source: string, destination: string): Copy {
         Strict.notNull(source);
         Strict.notNull(destination);
@@ -26,7 +26,7 @@ export default class Copy extends AbstractInstruction implements Committable {
     }
 
     /**
-     * Returns a new Copy instruction of given source and destination arguments with enhanced semantics.
+     * Returns a new `Copy` instruction of given source and destination arguments with enhanced semantics.
      * {@link https://docs.docker.com/engine/reference/builder/#copy---link}
      */
     public static ofLink(source: string, destination: string): Copy {
@@ -35,7 +35,7 @@ export default class Copy extends AbstractInstruction implements Committable {
         return new Copy(`--link ${source} ${destination}`);
     }
 
-    /** Returns a new Copy instruction of given source and destination arguments from given build stage. */
+    /** Returns a new `Copy` instruction of given source and destination arguments from given build stage. */
     public static fromStage(stage: BuildStage, source: string, destination: string): Copy {
         Strict.notNull(stage);
         Strict.notNull(source);
@@ -43,6 +43,7 @@ export default class Copy extends AbstractInstruction implements Committable {
         return new Copy(`--from=${stage.name()} ${source} ${destination}`);
     }
 
+    /** Returns a new `Copy` instruction of given source, destination, chown arguments and optionally chmod. */
     public static withChown(source: string, destination: string, chown: string, chmod?: string): Copy {
         Strict.notNull(source);
         Strict.notNull(destination);

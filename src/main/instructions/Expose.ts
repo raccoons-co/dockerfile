@@ -23,7 +23,7 @@ export default class Expose extends AbstractInstruction implements Committable {
         return new Expose(`${port.toString()}/tcp`);
     }
 
-    /** Returns a new Copy instruction of given UDP port. */
+    /** Returns a new `Expose` instruction of given UDP port. */
     public static ofUdp(port: number): Expose {
         Expose.isValid(port);
         return new Expose(`${port.toString()}/udp`);
