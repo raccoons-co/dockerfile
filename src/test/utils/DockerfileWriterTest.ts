@@ -10,7 +10,7 @@ import * as fs from "fs";
 import * as path from "path";
 import * as os from "os";
 import {Dockerfile} from "../../main";
-import DockerfileWriter from "../../main/utils/DockerfileWriter";
+import DockerfileWriter from "../../main/DockerfileWriter";
 
 @TestClass
 export default class DockerfileWriterTest {

@@ -6,7 +6,7 @@
 
 import AbstractInstruction from "./AbstractInstruction";
 import Committable from "./Committable";
-import DockerfileWriter from "../utils/DockerfileWriter";
+import DockerfileWriter from "../DockerfileWriter";
 import CommentDirective from "./CommentDirective";
 import {Optional, Strict} from "@raccoons-co/ethics";
 

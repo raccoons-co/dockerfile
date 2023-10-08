@@ -6,7 +6,7 @@
 
 import AbstractInstruction from "./AbstractInstruction";
 import Committable from "./Committable";
-import DockerfileInstruction from "./DockerfileInstruction";
+import DockerfileInstruction from "../DockerfileInstruction";
 
 /**
  * Represents a {@link https://docs.docker.com/engine/reference/builder/#workdir | WORKDIR} instruction.

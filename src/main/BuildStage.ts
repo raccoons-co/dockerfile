@@ -4,13 +4,12 @@
  * @license MIT
  */
 
-import DockerfileInstruction from "./instructions/DockerfileInstruction";
-import Committable from "./instructions/Committable";
 import {Optional, Strict} from "@raccoons-co/ethics";
-import From from "./instructions/From";
+import DockerfileInstruction from "./DockerfileInstruction";
 import BuildStageBuilder from "./BuildStageBuilder";
 import InitBuildStageBuilder from "./InitBuildStageBuilder";
-
+import Committable from "./instructions/Committable";
+import From from "./instructions/From";
 
 /**
  * A Docker build stage.

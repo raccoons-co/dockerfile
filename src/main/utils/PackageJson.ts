@@ -26,14 +26,14 @@ export default class PackageJson {
     }
 
     private static projectRoot(): string {
-        return Strict.notNull(process.env.INIT_CWD,"INIT_CWD is undefined" );
+        return Strict.notNull(process.env.INIT_CWD, "INIT_CWD is undefined");
     }
 
     private static path(): string {
         return path.join(PackageJson.projectRoot(), PackageJson.FILE);
     }
 
-    private static packageJsonContent() : string {
+    private static packageJsonContent(): string {
         return fs.readFileSync(PackageJson.path(), "utf8");
     }
 }

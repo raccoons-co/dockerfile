@@ -4,7 +4,7 @@
  * @license MIT
  */
 
-import DockerfileInstruction from "./DockerfileInstruction";
+import DockerfileInstruction from "../DockerfileInstruction";
 
 /**
  * A non-committable Dockerfile instruction which does not adds a layer to the build.

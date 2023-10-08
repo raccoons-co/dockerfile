@@ -4,7 +4,7 @@
  * @license MIT
  */
 
-import DockerfileWriter from "../utils/DockerfileWriter";
+import DockerfileWriter from "./DockerfileWriter";
 
 /**
  * Represents a Dockerfile instruction.

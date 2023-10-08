@@ -5,7 +5,7 @@
  */
 
 import {Strict} from "@raccoons-co/ethics";
-import DockerfileWriter from "../utils/DockerfileWriter";
+import DockerfileWriter from "../DockerfileWriter";
 
 /**
  * The abstraction of a Dockerfile instruction.

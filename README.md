@@ -6,13 +6,18 @@
 The Dockerfile generation API
 ---
 
+The `Dockerfile` generation API. See the [documentation](https://raccoons-co.github.io/dockerfile/).
+
+
 *package.json*:
 
 ~~~
   "scripts": {
+    "build": "tsc",
+    "compile": "tsc",
     "install_dev": "npm install",
     "install_prod": "npm install --omit=dev --omit=optional --ignore-scripts",
-    "prepack": "npm run build",
+    "prepack": "npm run compile",
     "start": "npm run this.microservice",
     "this.microservice": "node dist/main/EntryPoint"
   },

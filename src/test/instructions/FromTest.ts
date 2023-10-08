@@ -7,7 +7,7 @@
 import {Test, TestClass} from "@raccoons-co/cleanway";
 import {Optional} from "@raccoons-co/ethics";
 import {assert} from "chai";
-import {From} from "../../main";
+import From from "../../main/instructions/From";
 
 @TestClass
 export default class FromTest {
