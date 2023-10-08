@@ -13,7 +13,7 @@ jobs:
           version: 20.10.23
       - checkout
       - run:
-          name: "Clean install a project and perform a security audit"
+          name: "Perform clean install and security audit"
           command: npm ci
       - run:
           name: "Run tests with coverage"
