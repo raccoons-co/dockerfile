@@ -6,6 +6,7 @@ import CopyTest from "./instructions/CopyTest";
 import EnvTest from "./instructions/EnvTest";
 import ExposeTest from "./instructions/ExposeTest";
 import FromTest from "./instructions/FromTest";
+import HealthCheckTest from "./instructions/HealthCheckTest";
 import LabelTest from "./instructions/LabelTest";
 import OnBuildTest from "./instructions/OnBuildTest";
 import RunTest from "./instructions/RunTest";
@@ -25,6 +26,7 @@ CleanWayBuilder.instance()
     .use(EnvTest)
     .use(ExposeTest)
     .use(FromTest)
+    .use(HealthCheckTest)
     .use(LabelTest)
     .use(OnBuildTest)
     .use(RunTest)

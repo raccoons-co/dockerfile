@@ -8,6 +8,7 @@ import {Test, TestClass} from "@raccoons-co/cleanway";
 import {assert} from "chai";
 import {BuildStage, Cmd, Copy, Dockerfile, Env, Expose, PackageJson, Run, User, Workdir} from "../main";
 import {existsSync} from "node:fs";
+import HealthCheck from "../main/instructions/HealthCheck";
 
 @TestClass
 export default class DockerfileIntegrationTest {
@@ -40,6 +41,7 @@ export default class DockerfileIntegrationTest {
                     Env.of("NODE_ENV", "production"),
                     Run.of(packageJson.scripts.install_prod),
                     Expose.ofTcp(packageJson.docker.port),
+                    HealthCheck.of(Cmd.of("wget -q http://localhost/ || exit 1")),
                     Cmd.of(packageJson.scripts.start)
                 )
                 .build();
