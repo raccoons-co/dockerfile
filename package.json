@@ -22,14 +22,15 @@
     "url": "git+https://github.com/raccoons-co/dockerfile.git"
   },
   "scripts": {
-    "build": "tsc",
+    "build": "ts-node src/build/EntryPoint.ts",
+    "compile": "tsc",
     "install_dev": "npm install",
     "install_prod": "npm install --omit=dev --omit=optional --ignore-scripts",
     "lint.packagejson": "npmPkgJsonLint . --ignorePath .npmpackagejsonlintignore",
     "lint.typescript": "eslint './src/**/*.ts'",
     "postlint.typescript": "typedoc ./src/main/index.ts",
     "posttest": "npm-run-all lint.*",
-    "prepack": "npm run build",
+    "prepack": "npm run compile",
     "start": "npm run this.microservice",
     "test": "nyc ts-node src/test/EntryPoint",
     "this.microservice": "node dist/main/EntryPoint"

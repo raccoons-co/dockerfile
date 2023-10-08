@@ -4,8 +4,8 @@
  * @license MIT
  */
 
-import Committable from "./instructions/Committable";
 import BuildStage from "./BuildStage";
+import Committable from "./instructions/Committable";
 
 /**
  * The builder of a Docker build stage layers.

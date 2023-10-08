@@ -4,10 +4,10 @@
  * @license MIT
  */
 
+import {Optional, Strict} from "@raccoons-co/ethics";
 import AbstractInstruction from "./AbstractInstruction";
 import Committable from "./Committable";
 import {AutomaticArg} from "./AutomaticArg";
-import {Optional, Strict} from "@raccoons-co/ethics";
 
 /**
  * Represents an {@link https://docs.docker.com/engine/reference/builder/#arg | ARG} instruction.

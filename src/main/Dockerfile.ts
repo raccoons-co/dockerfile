@@ -8,9 +8,9 @@ import {Strict} from "@raccoons-co/ethics";
 import * as path from "path";
 import BuildStage from "./BuildStage";
 import DockerfileBuilder from "./DockerfileBuilder";
-import DockerfileInstruction from "./instructions/DockerfileInstruction";
+import DockerfileInstruction from "./DockerfileInstruction";
+import DockerfileWriter from "./DockerfileWriter";
 import CommentDirective from "./instructions/CommentDirective";
-import DockerfileWriter from "./utils/DockerfileWriter";
 
 /**
  * Represents a Dockerfile that can be synthesized into a file on the filesystem.
@@ -106,7 +106,7 @@ export default class Dockerfile {
         writer.write();
     }
 
-    /** Returns all instructions from all build stages with added first-line and last-line comments. */
+    /** Returns all instructions from all build stages. */
     private instructions(): ReadonlyArray<DockerfileInstruction> {
         const dockerfileInstructions: Array<DockerfileInstruction> = [];
 

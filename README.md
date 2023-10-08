@@ -6,13 +6,17 @@
 The Dockerfile generation API
 ---
 
+The `Dockerfile` generation API. See the [documentation](https://raccoons-co.github.io/dockerfile/).
+
 *package.json*:
 
 ~~~
   "scripts": {
+    "build": "ts-node src/build/EntryPoint.ts",
+    "compile": "tsc",
     "install_dev": "npm install",
     "install_prod": "npm install --omit=dev --omit=optional --ignore-scripts",
-    "prepack": "npm run build",
+    "prepack": "npm run compile",
     "start": "npm run this.microservice",
     "this.microservice": "node dist/main/EntryPoint"
   },
@@ -24,7 +28,7 @@ The Dockerfile generation API
   }
 ~~~
 
-API usage example:
+API usage:
 
 ~~~
 const packageJson = PackageJson.toObject();

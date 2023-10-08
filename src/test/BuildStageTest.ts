@@ -7,7 +7,8 @@
 import {Test, TestClass} from "@raccoons-co/cleanway";
 import {Optional} from "@raccoons-co/ethics";
 import {assert} from "chai";
-import {BuildStage, Env, From} from "../main";
+import {BuildStage, Env} from "../main";
+import From from "../main/instructions/From";
 
 @TestClass
 export default class BuildStageTest {

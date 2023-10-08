@@ -3,7 +3,7 @@ import DockerfileBuilder from "./DockerfileBuilder";
 import BuildStage from "./BuildStage";
 import BuildStageBuilder from "./BuildStageBuilder";
 import InitBuildStageBuilder from "./InitBuildStageBuilder";
-import DockerfileInstruction from "./instructions/DockerfileInstruction";
+import DockerfileInstruction from "./DockerfileInstruction";
 import Committable from "./instructions/Committable";
 import Arg from "./instructions/Arg";
 import {AutomaticArg} from "./instructions/AutomaticArg";
@@ -11,8 +11,8 @@ import Cmd from "./instructions/Cmd";
 import Copy from "./instructions/Copy";
 import Env from "./instructions/Env";
 import Expose from "./instructions/Expose";
-import From from "./instructions/From";
 import Label from "./instructions/Label";
+import OnBuild from "./instructions/OnBuild";
 import Run from "./instructions/Run";
 import User from "./instructions/User";
 import Workdir from "./instructions/Workdir";
@@ -25,11 +25,11 @@ import PackageJson from "./utils/PackageJson";
  * @public
  */
 export {
-    Dockerfile,
-    DockerfileBuilder,
     BuildStage,
     InitBuildStageBuilder,
     BuildStageBuilder,
+    Dockerfile,
+    DockerfileBuilder,
     DockerfileInstruction,
     Committable,
     Arg,
@@ -38,8 +38,8 @@ export {
     Copy,
     Env,
     Expose,
-    From,
     Label,
+    OnBuild,
     Run,
     User,
     Workdir,

@@ -6,8 +6,7 @@
 
 import {Strict} from "@raccoons-co/ethics";
 import * as fs from "fs";
-import * as path from "path";
-import {Dockerfile} from "../index";
+import Dockerfile from "./Dockerfile";
 
 /**
  * The file writer utility.
@@ -16,25 +15,18 @@ import {Dockerfile} from "../index";
  */
 export default class DockerfileWriter {
 
-    /** The directory name for file writing. */
-    private readonly directoryName: string;
+    private readonly dockerfile: Dockerfile;
 
-    /** The file name of generated file. */
-    private readonly fileName: string;
-
-    /** The file content to write. */
     private readonly fileContent: Array<string>;
 
-    private constructor(directoryName: string, fileName: string) {
-        this.directoryName = Strict.notNull(directoryName);
-        this.fileName = Strict.notNull(fileName);
+    private constructor(dockerfile: Dockerfile) {
+        this.dockerfile = Strict.notNull(dockerfile);
         this.fileContent = [];
     }
 
     /** Returns a new instance of the DockerfileWriter of given Dockerfile. */
     public static of(dockerfile: Dockerfile): DockerfileWriter {
-        Strict.notNull(dockerfile);
-        return new DockerfileWriter(dockerfile.directory(), dockerfile.name());
+        return new DockerfileWriter(dockerfile);
     }
 
     /** Adds a row string to the file content. */
@@ -45,13 +37,9 @@ export default class DockerfileWriter {
 
     /** Writes given content to the file on the filesystem. */
     public write(): void {
-        this.ensureMkdir(this.directoryName);
+        this.ensureMkdir(this.dockerfile.directory());
         const composedFile = this.fileContent.join("\n");
-        fs.writeFileSync(this.fullName(), composedFile);
-    }
-
-    private fullName(): string {
-        return path.join(this.directoryName, this.fileName);
+        fs.writeFileSync(this.dockerfile.path(), composedFile);
     }
 
     private ensureMkdir(path: string): void {
