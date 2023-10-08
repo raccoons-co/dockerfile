@@ -8,12 +8,11 @@ The Dockerfile generation API
 
 The `Dockerfile` generation API. See the [documentation](https://raccoons-co.github.io/dockerfile/).
 
-
 *package.json*:
 
 ~~~
   "scripts": {
-    "build": "tsc",
+    "build": "ts-node src/build/EntryPoint.ts",
     "compile": "tsc",
     "install_dev": "npm install",
     "install_prod": "npm install --omit=dev --omit=optional --ignore-scripts",
@@ -29,7 +28,7 @@ The `Dockerfile` generation API. See the [documentation](https://raccoons-co.git
   }
 ~~~
 
-API usage example:
+API usage:
 
 ~~~
 const packageJson = PackageJson.toObject();
