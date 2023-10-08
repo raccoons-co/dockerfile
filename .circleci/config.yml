@@ -12,9 +12,15 @@ jobs:
       - setup_remote_docker:
           version: 20.10.23
       - checkout
-      - run: npm ci
-      - run: npm test
-      - run: npm pack
+      - run:
+          name: "Perform clean install and security audit"
+          command: npm ci
+      - run:
+          name: "Run tests with coverage"
+          command: npm test
+      - run:
+          name: "Create a tarball from a package"
+          command: npm pack
       - codecov/upload:
           xtra_args: "--nonZero"
 

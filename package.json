@@ -4,7 +4,7 @@
   "description": "The Dockerfile generation API.",
   "keywords": [
     "Dockerfile",
-    "generation"
+    "synthesizer"
   ],
   "homepage": "https://github.com/raccoons-co/dockerfile#readme",
   "bugs": {
@@ -60,7 +60,7 @@
     "access": "public",
     "registry": "https://registry.npmjs.org/"
   },
-  "docker": {
+  "microservice": {
     "image": "node:lts-alpine",
     "user": "node",
     "homedir": "/home/node",
