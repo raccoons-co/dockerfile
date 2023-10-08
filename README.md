@@ -57,6 +57,7 @@ const microserviceStage =
             Env.of("NODE_ENV", "production"),
             Run.of(packageJson.scripts.install_prod),
             Expose.ofTcp(packageJson.docker.port),
+            HealthCheck.of(Cmd.of("wget -q http://localhost/ || exit 1")),
             Cmd.of(packageJson.scripts.start)
         )
         .build();
@@ -80,7 +81,7 @@ USER node
 WORKDIR /home/node
 COPY --chown=node . .
 RUN npm install
-RUN npm run build
+RUN npm run compile
 # Initialize a new build stage
 FROM node:lts-alpine
 USER node
@@ -90,6 +91,7 @@ COPY --from=microservice-compiler /home/node/package.json .
 ENV NODE_ENV=production
 RUN npm install --omit=dev --omit=optional --ignore-scripts
 EXPOSE 80/tcp
+HEALTHCHECK CMD wget -q http://localhost/ || exit 1
 CMD npm run this.microservice
 # EOF
 ~~~
