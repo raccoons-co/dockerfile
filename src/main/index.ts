@@ -12,6 +12,7 @@ import Copy from "./instructions/Copy";
 import Env from "./instructions/Env";
 import Expose from "./instructions/Expose";
 import Label from "./instructions/Label";
+import OnBuild from "./instructions/OnBuild";
 import Run from "./instructions/Run";
 import User from "./instructions/User";
 import Workdir from "./instructions/Workdir";
@@ -38,6 +39,7 @@ export {
     Env,
     Expose,
     Label,
+    OnBuild,
     Run,
     User,
     Workdir,
