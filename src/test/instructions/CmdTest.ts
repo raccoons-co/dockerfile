@@ -13,13 +13,13 @@ export default class CmdTest {
 
     @Test
     public returnsCmdInstruction(): void {
-        const instruction = Cmd.of("npm run this.microservice");
+        const instruction = Cmd.ofShell("npm run this.microservice");
         assert.equal(instruction.toString(), "CMD npm run this.microservice");
     }
 
     @Test
     public returnsCmdWithExecFormInstruction(): void {
-        const instruction = Cmd.ofExecForm("npm run this.microservice");
+        const instruction = Cmd.ofExec("npm run this.microservice");
         assert.equal(instruction.toString(), "CMD [\"npm\",\"run\",\"this.microservice\"]");
     }
 }

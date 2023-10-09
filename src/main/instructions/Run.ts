@@ -16,13 +16,13 @@ export default class Run extends AbstractInstruction implements Committable {
         super("RUN", command);
     }
 
-    /** Returns a new `Run` instruction with shell form of given command. */
-    public static of(command: string): Run {
-        return new Run(command);
+    /** Returns a new `Run` instruction with exec form of given command. */
+    public static ofExec(command: string): Run {
+        return new Run(AbstractInstruction.execForm(command));
     }
 
-    /** Returns a new `Run` instruction with exec form of given command. */
-    public static ofExecForm(command: string): Run {
-        return new Run(AbstractInstruction.execForm(command));
+    /** Returns a new `Run` instruction with shell form of given command. */
+    public static ofShell(command: string): Run {
+        return new Run(command);
     }
 }

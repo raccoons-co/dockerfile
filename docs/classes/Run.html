@@ -30,7 +30,7 @@
 <ul class="tsd-hierarchy">
 <li><a href="../interfaces/Committable.html" class="tsd-signature-type tsd-kind-interface">Committable</a></li></ul></section><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/raccoons-co/dockerfile/blob/f45178e/src/main/instructions/Run.ts#L13">instructions/Run.ts:13</a></li></ul></aside>
+<li>Defined in <a href="https://github.com/raccoons-co/dockerfile/blob/fc76b31/src/main/instructions/Run.ts#L13">instructions/Run.ts:13</a></li></ul></aside>
 <section class="tsd-panel-group tsd-index-group">
 <section class="tsd-panel tsd-index-panel">
 <details class="tsd-index-content tsd-index-accordion" open><summary class="tsd-accordion-summary tsd-index-summary">
@@ -45,8 +45,8 @@
 <div class="tsd-index-list"><a href="Run.html#accept" class="tsd-index-link tsd-is-inherited"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2048"></use></svg><span>accept</span></a>
 <a href="Run.html#toString" class="tsd-index-link tsd-is-inherited"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2048"></use></svg><span>to<wbr/>String</span></a>
 <a href="Run.html#execForm" class="tsd-index-link tsd-is-protected tsd-is-inherited"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2048"></use></svg><span>exec<wbr/>Form</span></a>
-<a href="Run.html#of" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2048"></use></svg><span>of</span></a>
-<a href="Run.html#ofExecForm" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2048"></use></svg><span>of<wbr/>Exec<wbr/>Form</span></a>
+<a href="Run.html#ofExec" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2048"></use></svg><span>of<wbr/>Exec</span></a>
+<a href="Run.html#ofShell" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2048"></use></svg><span>of<wbr/>Shell</span></a>
 </div></section></div></details></section></section>
 <section class="tsd-panel-group tsd-member-group">
 <h2>Constructors</h2>
@@ -63,7 +63,7 @@
 <h4 class="tsd-returns-title">Returns <a href="Run.html" class="tsd-signature-type tsd-kind-class">Run</a></h4><aside class="tsd-sources">
 <p>Overrides AbstractInstruction.constructor</p>
 <ul>
-<li>Defined in <a href="https://github.com/raccoons-co/dockerfile/blob/f45178e/src/main/instructions/Run.ts#L15">instructions/Run.ts:15</a></li></ul></aside></li></ul></section></section>
+<li>Defined in <a href="https://github.com/raccoons-co/dockerfile/blob/fc76b31/src/main/instructions/Run.ts#L15">instructions/Run.ts:15</a></li></ul></aside></li></ul></section></section>
 <section class="tsd-panel-group tsd-member-group">
 <h2>Methods</h2>
 <section class="tsd-panel tsd-member tsd-is-inherited"><a id="accept" class="tsd-anchor"></a>
@@ -83,7 +83,7 @@
 <p>Implementation of <a href="../interfaces/Committable.html">Committable</a>.<a href="../interfaces/Committable.html#accept">accept</a></p>
 <p>Inherited from AbstractInstruction.accept</p>
 <ul>
-<li>Defined in <a href="https://github.com/raccoons-co/dockerfile/blob/f45178e/src/main/instructions/AbstractInstruction.ts#L30">instructions/AbstractInstruction.ts:30</a></li></ul></aside></li></ul></section>
+<li>Defined in <a href="https://github.com/raccoons-co/dockerfile/blob/fc76b31/src/main/instructions/AbstractInstruction.ts#L30">instructions/AbstractInstruction.ts:30</a></li></ul></aside></li></ul></section>
 <section class="tsd-panel tsd-member tsd-is-inherited"><a id="toString" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>to<wbr/>String</span><a href="#toString" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-is-inherited">
@@ -95,7 +95,7 @@
 <div class="tsd-comment tsd-typography"></div><aside class="tsd-sources">
 <p>Inherited from AbstractInstruction.toString</p>
 <ul>
-<li>Defined in <a href="https://github.com/raccoons-co/dockerfile/blob/f45178e/src/main/instructions/AbstractInstruction.ts#L25">instructions/AbstractInstruction.ts:25</a></li></ul></aside></li></ul></section>
+<li>Defined in <a href="https://github.com/raccoons-co/dockerfile/blob/fc76b31/src/main/instructions/AbstractInstruction.ts#L25">instructions/AbstractInstruction.ts:25</a></li></ul></aside></li></ul></section>
 <section class="tsd-panel tsd-member tsd-is-protected tsd-is-inherited"><a id="execForm" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagStatic">Static</code> <code class="tsd-tag ts-flagProtected">Protected</code> <span>exec<wbr/>Form</span><a href="#execForm" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-is-protected tsd-is-inherited">
@@ -112,27 +112,11 @@
 <div class="tsd-comment tsd-typography"></div><aside class="tsd-sources">
 <p>Inherited from AbstractInstruction.execForm</p>
 <ul>
-<li>Defined in <a href="https://github.com/raccoons-co/dockerfile/blob/f45178e/src/main/instructions/AbstractInstruction.ts#L36">instructions/AbstractInstruction.ts:36</a></li></ul></aside></li></ul></section>
-<section class="tsd-panel tsd-member"><a id="of" class="tsd-anchor"></a>
-<h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagStatic">Static</code> <span>of</span><a href="#of" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
+<li>Defined in <a href="https://github.com/raccoons-co/dockerfile/blob/fc76b31/src/main/instructions/AbstractInstruction.ts#L36">instructions/AbstractInstruction.ts:36</a></li></ul></aside></li></ul></section>
+<section class="tsd-panel tsd-member"><a id="ofExec" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagStatic">Static</code> <span>of<wbr/>Exec</span><a href="#ofExec" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
-<li class="tsd-signature tsd-anchor-link" id="of.of-1"><span class="tsd-kind-call-signature">of</span><span class="tsd-signature-symbol">(</span><span class="tsd-kind-parameter">command</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="Run.html" class="tsd-signature-type tsd-kind-class">Run</a><a href="#of.of-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></li>
-<li class="tsd-description">
-<div class="tsd-comment tsd-typography"><p>Returns a new <code>Run</code> instruction with shell form of given command.</p>
-</div>
-<div class="tsd-parameters">
-<h4 class="tsd-parameters-title">Parameters</h4>
-<ul class="tsd-parameter-list">
-<li>
-<h5><span class="tsd-kind-parameter">command</span>: <span class="tsd-signature-type">string</span></h5></li></ul></div>
-<h4 class="tsd-returns-title">Returns <a href="Run.html" class="tsd-signature-type tsd-kind-class">Run</a></h4>
-<div class="tsd-comment tsd-typography"></div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/raccoons-co/dockerfile/blob/f45178e/src/main/instructions/Run.ts#L20">instructions/Run.ts:20</a></li></ul></aside></li></ul></section>
-<section class="tsd-panel tsd-member"><a id="ofExecForm" class="tsd-anchor"></a>
-<h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagStatic">Static</code> <span>of<wbr/>Exec<wbr/>Form</span><a href="#ofExecForm" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
-<ul class="tsd-signatures">
-<li class="tsd-signature tsd-anchor-link" id="ofExecForm.ofExecForm-1"><span class="tsd-kind-call-signature">of<wbr/>Exec<wbr/>Form</span><span class="tsd-signature-symbol">(</span><span class="tsd-kind-parameter">command</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="Run.html" class="tsd-signature-type tsd-kind-class">Run</a><a href="#ofExecForm.ofExecForm-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></li>
+<li class="tsd-signature tsd-anchor-link" id="ofExec.ofExec-1"><span class="tsd-kind-call-signature">of<wbr/>Exec</span><span class="tsd-signature-symbol">(</span><span class="tsd-kind-parameter">command</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="Run.html" class="tsd-signature-type tsd-kind-class">Run</a><a href="#ofExec.ofExec-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></li>
 <li class="tsd-description">
 <div class="tsd-comment tsd-typography"><p>Returns a new <code>Run</code> instruction with exec form of given command.</p>
 </div>
@@ -144,7 +128,23 @@
 <h4 class="tsd-returns-title">Returns <a href="Run.html" class="tsd-signature-type tsd-kind-class">Run</a></h4>
 <div class="tsd-comment tsd-typography"></div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/raccoons-co/dockerfile/blob/f45178e/src/main/instructions/Run.ts#L25">instructions/Run.ts:25</a></li></ul></aside></li></ul></section></section></div>
+<li>Defined in <a href="https://github.com/raccoons-co/dockerfile/blob/fc76b31/src/main/instructions/Run.ts#L20">instructions/Run.ts:20</a></li></ul></aside></li></ul></section>
+<section class="tsd-panel tsd-member"><a id="ofShell" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagStatic">Static</code> <span>of<wbr/>Shell</span><a href="#ofShell" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
+<ul class="tsd-signatures">
+<li class="tsd-signature tsd-anchor-link" id="ofShell.ofShell-1"><span class="tsd-kind-call-signature">of<wbr/>Shell</span><span class="tsd-signature-symbol">(</span><span class="tsd-kind-parameter">command</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="Run.html" class="tsd-signature-type tsd-kind-class">Run</a><a href="#ofShell.ofShell-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></li>
+<li class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Returns a new <code>Run</code> instruction with shell form of given command.</p>
+</div>
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li>
+<h5><span class="tsd-kind-parameter">command</span>: <span class="tsd-signature-type">string</span></h5></li></ul></div>
+<h4 class="tsd-returns-title">Returns <a href="Run.html" class="tsd-signature-type tsd-kind-class">Run</a></h4>
+<div class="tsd-comment tsd-typography"></div><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/raccoons-co/dockerfile/blob/fc76b31/src/main/instructions/Run.ts#L25">instructions/Run.ts:25</a></li></ul></aside></li></ul></section></section></div>
 <div class="col-sidebar">
 <div class="page-menu">
 <div class="tsd-navigation settings">
@@ -168,8 +168,8 @@
 <li><a href="#accept" class="tsd-is-inherited"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2048"></use></svg><span>accept</span></a></li>
 <li><a href="#toString" class="tsd-is-inherited"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2048"></use></svg><span>to<wbr/>String</span></a></li>
 <li><a href="#execForm" class="tsd-is-protected tsd-is-inherited"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2048"></use></svg><span>exec<wbr/>Form</span></a></li>
-<li><a href="#of" class=""><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2048"></use></svg><span>of</span></a></li>
-<li><a href="#ofExecForm" class=""><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2048"></use></svg><span>of<wbr/>Exec<wbr/>Form</span></a></li></ul></div></details></div>
+<li><a href="#ofExec" class=""><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2048"></use></svg><span>of<wbr/>Exec</span></a></li>
+<li><a href="#ofShell" class=""><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2048"></use></svg><span>of<wbr/>Shell</span></a></li></ul></div></details></div>
 <div class="site-menu">
 <nav class="tsd-navigation"><a href="../modules.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-1"></use></svg><span>@raccoons-co/dockerfile</span></a>
 <ul class="tsd-small-nested-navigation" id="tsd-nav-container" data-base="..">

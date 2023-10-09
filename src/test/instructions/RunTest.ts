@@ -13,13 +13,13 @@ export default class RunTest {
 
     @Test
     public returnsRunInstruction(): void {
-        const instruction = Run.of("npm install --omit=dev --omit=optional --ignore-scripts");
+        const instruction = Run.ofShell("npm install --omit=dev --omit=optional --ignore-scripts");
         assert.equal(instruction.toString(), "RUN npm install --omit=dev --omit=optional --ignore-scripts");
     }
 
     @Test
     public returnsRunOfExecFormInstruction(): void {
-        const instruction = Run.ofExecForm("npm install --omit=dev --omit=optional --ignore-scripts");
+        const instruction = Run.ofExec("npm install --omit=dev --omit=optional --ignore-scripts");
         assert.equal(instruction.toString(),
             "RUN [\"npm\",\"install\",\"--omit=dev\",\"--omit=optional\",\"--ignore-scripts\"]");
     }

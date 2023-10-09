@@ -6,7 +6,7 @@
 
 import {Test, TestClass} from "@raccoons-co/cleanway";
 import {assert} from "chai";
-import {BuildStage, Cmd, Copy, Dockerfile, Env, Expose, PackageJson, Run, User, Workdir} from "../main";
+import {BuildStage, Cmd, Copy, Dockerfile, Env, Expose, OnBuild, PackageJson, Run, User, Workdir} from "../main";
 import {existsSync} from "node:fs";
 import HealthCheck from "../main/instructions/HealthCheck";
 
@@ -20,29 +20,30 @@ export default class DockerfileIntegrationTest {
         const compileStage =
             BuildStage.newBuilder()
                 .setName("microservice-compiler")
-                .setFrom(config.microservice.image)
+                .setFrom(config.docker.image)
                 .addLayer(
-                    User.of(config.microservice.user),
-                    Workdir.of(config.microservice.homedir),
-                    Copy.withChown(".", ".", config.microservice.user),
-                    Run.of(config.scripts.install_dev),
-                    Run.of(config.scripts.prepack)
+                    User.of(config.docker.user),
+                    Workdir.of(config.docker.homedir),
+                    Copy.withChown(".", ".", config.docker.user),
+                    Run.ofShell(config.scripts.install_dev),
+                    Run.ofShell(config.scripts.prepack)
                 )
                 .build();
 
         const microserviceStage =
             BuildStage.newBuilder()
-                .setFrom(config.microservice.image)
+                .setFrom(config.docker.image)
                 .addLayer(
-                    User.of(config.microservice.user),
-                    Workdir.of(config.microservice.homedir),
+                    User.of(config.docker.user),
+                    Workdir.of(config.docker.homedir),
                     Copy.fromStage(compileStage, "/home/node/dist/", "dist/"),
                     Copy.fromStage(compileStage, "/home/node/package.json", "."),
                     Env.of("NODE_ENV", "production"),
-                    Run.of(config.scripts.install_prod),
-                    Expose.ofTcp(config.microservice.port),
-                    HealthCheck.of(Cmd.of("wget -q http://localhost/ || exit 1")),
-                    Cmd.ofExecForm(config.scripts.start)
+                    Run.ofShell(config.scripts.install_prod),
+                    Expose.ofTcp(config.docker.port),
+                    HealthCheck.of(Cmd.ofShell("wget -q http://localhost/ || exit 1")),
+                    OnBuild.of(Run.ofShell("exit 1")),
+                    Cmd.ofExec(config.scripts.start)
                 )
                 .build();
 

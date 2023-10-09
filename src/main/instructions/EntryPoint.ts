@@ -17,13 +17,13 @@ export default class EntryPoint extends AbstractInstruction implements Committab
         super("ENTRYPOINT", execFormCommand);
     }
 
-    /** Returns a new `EntryPoint` instruction with shell form of command. */
+    /** Returns a new `EntryPoint` instruction with exec form of command. */
     public static of(command: string): EntryPoint {
-        return new EntryPoint(command);
+        return new EntryPoint(AbstractInstruction.execForm(command));
     }
 
-    /** Returns a new `EntryPoint` instruction with exec form of command. */
-    public static ofExecForm(command: string): EntryPoint {
-        return new EntryPoint(AbstractInstruction.execForm(command));
+    /** Returns a new `EntryPoint` instruction with shell form of command. */
+    public static ofShellForm(command: string): EntryPoint {
+        return new EntryPoint(command);
     }
 }

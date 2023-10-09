@@ -13,7 +13,7 @@ export default class OnBuildTest {
 
     @Test
     public returnsOnBuildInstruction(): void {
-        const instruction = OnBuild.of(Run.of("npm install"));
+        const instruction = OnBuild.of(Run.ofShell("npm install"));
         assert.equal(instruction.toString(), "ONBUILD RUN npm install");
     }
 }

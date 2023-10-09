@@ -13,7 +13,7 @@ export default class VolumeTest {
 
     @Test
     public returnsVolumeInstruction(): void {
-        const instruction = Volume.of("/myvol");
-        assert.equal(instruction.toString(), "VOLUME /myvol");
+        const instruction = Volume.of("/var/www", "/var/log/apache2", "/etc/apache2");
+        assert.equal(instruction.toString(), "VOLUME [\"/var/www\",\"/var/log/apache2\",\"/etc/apache2\"]");
     }
 }

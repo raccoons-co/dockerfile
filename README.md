@@ -41,8 +41,8 @@ const compileStage =
             User.of(config.microservice.user),
             Workdir.of(config.microservice.homedir),
             Copy.withChown(".", ".", config.microservice.user),
-            Run.of(config.scripts.install_dev),
-            Run.of(config.scripts.prepack)
+            Run.ofShell(config.scripts.install_dev),
+            Run.ofShell(config.scripts.prepack)
         )
         .build();
 
@@ -55,10 +55,11 @@ const microserviceStage =
             Copy.fromStage(compileStage, "/home/node/dist/", "dist/"),
             Copy.fromStage(compileStage, "/home/node/package.json", "."),
             Env.of("NODE_ENV", "production"),
-            Run.of(config.scripts.install_prod),
+            Run.ofShell(config.scripts.install_prod),
             Expose.ofTcp(config.microservice.port),
-            HealthCheck.of(Cmd.of("wget -q http://localhost/ || exit 1")),
-            Cmd.of(config.scripts.start)
+            HealthCheck.of(Cmd.ofShell("wget -q http://localhost/ || exit 1")),
+            OnBuild.of(Run.ofShell("exit 1")),
+            Cmd.ofExec(config.scripts.start)
         )
         .build();
 
@@ -92,6 +93,7 @@ ENV NODE_ENV=production
 RUN npm install --omit=dev --omit=optional --ignore-scripts
 EXPOSE 80/tcp
 HEALTHCHECK CMD wget -q http://localhost/ || exit 1
-CMD npm run this.microservice
+ONBUILD RUN exit 1
+CMD ["npm","run","this.microservice"]
 # EOF
 ~~~

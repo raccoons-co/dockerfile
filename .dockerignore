@@ -1,0 +1,12 @@
+.circleci/
+.git/
+.github/
+.idea/
+.nyc_output/
+coverage/
+docs/
+generated/
+lib/
+node_modules/
+
+package-lock.json

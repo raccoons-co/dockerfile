@@ -13,13 +13,13 @@ export default class EntryPointTest {
 
     @Test
     public returnsEntryPointInstruction(): void {
-        const instruction = EntryPoint.of("/usr/sbin/apache2ctl -D FOREGROUND");
+        const instruction = EntryPoint.ofShellForm("/usr/sbin/apache2ctl -D FOREGROUND");
         assert.equal(instruction.toString(), "ENTRYPOINT /usr/sbin/apache2ctl -D FOREGROUND");
     }
 
     @Test
     public returnsEntryPointOfExecFormInstruction(): void {
-        const instruction = EntryPoint.ofExecForm("/usr/sbin/apache2ctl -D FOREGROUND");
+        const instruction = EntryPoint.of("/usr/sbin/apache2ctl -D FOREGROUND");
         assert.equal(instruction.toString(), "ENTRYPOINT [\"/usr/sbin/apache2ctl\",\"-D\",\"FOREGROUND\"]");
     }
 }

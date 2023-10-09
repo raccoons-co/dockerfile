@@ -20,7 +20,7 @@ export default class HealthCheckTest {
 
     @Test
     public returnsHealthCheckInstruction(): void {
-        const checkCmd = Cmd.of("curl -f http://localhost/ || exit 1");
+        const checkCmd = Cmd.ofShell("curl -f http://localhost/ || exit 1");
         const instruction = HealthCheck.of(checkCmd, "--interval=5m --timeout=3s");
         assert.equal(instruction.toString(),
             "HEALTHCHECK --interval=5m --timeout=3s \\\n  CMD curl -f http://localhost/ || exit 1");
