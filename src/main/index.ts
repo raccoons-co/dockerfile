@@ -15,11 +15,11 @@ import Expose from "./instructions/Expose";
 import Label from "./instructions/Label";
 import OnBuild from "./instructions/OnBuild";
 import Run from "./instructions/Run";
+import Shell from "./instructions/Shell";
 import User from "./instructions/User";
 import Volume from "./instructions/Volume";
 import Workdir from "./instructions/Workdir";
 import PackageJson from "./utils/PackageJson";
-
 
 /**
  * The Dockerfile generation API.
@@ -45,6 +45,7 @@ export {
     Label,
     OnBuild,
     Run,
+    Shell,
     User,
     Volume,
     Workdir,
