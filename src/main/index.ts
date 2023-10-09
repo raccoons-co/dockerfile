@@ -15,6 +15,7 @@ import Label from "./instructions/Label";
 import OnBuild from "./instructions/OnBuild";
 import Run from "./instructions/Run";
 import User from "./instructions/User";
+import Volume from "./instructions/Volume";
 import Workdir from "./instructions/Workdir";
 import PackageJson from "./utils/PackageJson";
 
@@ -42,6 +43,7 @@ export {
     OnBuild,
     Run,
     User,
+    Volume,
     Workdir,
     PackageJson
 };
