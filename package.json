@@ -26,6 +26,7 @@
     "generate": "ts-node src/build/Dockerfile.ts",
     "install_dev": "npm install",
     "install_prod": "npm install --omit=dev --omit=optional --ignore-scripts",
+    "lint.dockerfile": "docker run --rm -i hadolint/hadolint hadolint --ignore=DL3059 - < ./generated/docker/Dockerfile",
     "lint.packagejson": "npmPkgJsonLint . --ignorePath .npmpackagejsonlintignore",
     "lint.typescript": "eslint './src/**/*.ts'",
     "postlint.typescript": "typedoc ./src/main/index.ts",

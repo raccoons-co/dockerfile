@@ -42,7 +42,7 @@ export default class DockerfileIntegrationTest {
                     Run.of(config.scripts.install_prod),
                     Expose.ofTcp(config.microservice.port),
                     HealthCheck.of(Cmd.of("wget -q http://localhost/ || exit 1")),
-                    Cmd.of(config.scripts.start)
+                    Cmd.ofExecForm(config.scripts.start)
                 )
                 .build();
 
