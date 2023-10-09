@@ -12,8 +12,8 @@ The `Dockerfile` generation API. See the [documentation](https://raccoons-co.git
 
 ~~~
   "scripts": {
-    "build": "ts-node src/build/EntryPoint.ts",
     "compile": "tsc",
+    "generate": "ts-node src/build/Dockerfile.ts",
     "install_dev": "npm install",
     "install_prod": "npm install --omit=dev --omit=optional --ignore-scripts",
     "prepack": "npm run compile",

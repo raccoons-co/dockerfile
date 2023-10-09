@@ -14,16 +14,18 @@ import UserTest from "./instructions/UserTest";
 import WorkdirTest from "./instructions/WorkdirTest";
 import BuildStageTest from "./BuildStageTest";
 import DockerfileTest from "./DockerfileTest";
-import DockerfileWriterTest from "./utils/DockerfileWriterTest";
+import DockerfileWriterTest from "./DockerfileWriterTest";
 import DockerfileIntegrationTest from "./DockerfileIntegrationTest";
 import PackageJsonTest from "./utils/PackageJsonTest";
 import VolumeTest from "./instructions/VolumeTest";
+import EntryPointTest from "./instructions/EntryPointTest";
 
 CleanWayBuilder.instance()
     .use(ArgTest) // Dockerfile instructions tests
     .use(CmdTest)
     .use(CommentDirectiveTest)
     .use(CopyTest)
+    .use(EntryPointTest)
     .use(EnvTest)
     .use(ExposeTest)
     .use(FromTest)

@@ -9,6 +9,7 @@ import Arg from "./instructions/Arg";
 import {AutomaticArg} from "./instructions/AutomaticArg";
 import Cmd from "./instructions/Cmd";
 import Copy from "./instructions/Copy";
+import EntryPoint from "./instructions/EntryPoint";
 import Env from "./instructions/Env";
 import Expose from "./instructions/Expose";
 import Label from "./instructions/Label";
@@ -18,6 +19,7 @@ import User from "./instructions/User";
 import Volume from "./instructions/Volume";
 import Workdir from "./instructions/Workdir";
 import PackageJson from "./utils/PackageJson";
+
 
 /**
  * The Dockerfile generation API.
@@ -37,6 +39,7 @@ export {
     AutomaticArg,
     Cmd,
     Copy,
+    EntryPoint,
     Env,
     Expose,
     Label,

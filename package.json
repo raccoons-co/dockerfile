@@ -4,7 +4,7 @@
   "description": "The Dockerfile generation API.",
   "keywords": [
     "Dockerfile",
-    "synthesizer"
+    "generator"
   ],
   "homepage": "https://github.com/raccoons-co/dockerfile#readme",
   "bugs": {
@@ -22,8 +22,8 @@
     "url": "git+https://github.com/raccoons-co/dockerfile.git"
   },
   "scripts": {
-    "build": "ts-node src/build/EntryPoint.ts",
     "compile": "tsc",
+    "generate": "ts-node src/build/Dockerfile.ts",
     "install_dev": "npm install",
     "install_prod": "npm install --omit=dev --omit=optional --ignore-scripts",
     "lint.packagejson": "npmPkgJsonLint . --ignorePath .npmpackagejsonlintignore",
