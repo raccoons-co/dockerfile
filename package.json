@@ -1,6 +1,6 @@
 {
   "name": "@raccoons-co/dockerfile",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "The Dockerfile generation API.",
   "keywords": [
     "Dockerfile",
