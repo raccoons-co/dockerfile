@@ -1,7 +1,8 @@
 /*
- * Copyright 2023, Raccoons. Developing simple way to change.
+ *  Copyright 2023, Raccoons. Developing simple way to change.
  *
- * @license MIT
+ *  @license MIT
+ *
  */
 
 import {AfterEach, Arguments, ArgumentsSource, ParameterizedTest, Test, TestClass} from "@raccoons-co/cleanway";
@@ -9,8 +10,8 @@ import {assert} from "chai";
 import * as fs from "fs";
 import * as path from "path";
 import * as os from "os";
-import {Dockerfile} from "../../main";
-import DockerfileWriter from "../../main/DockerfileWriter";
+import {Dockerfile} from "../main";
+import DockerfileWriter from "../main/DockerfileWriter";
 
 @TestClass
 export default class DockerfileWriterTest {

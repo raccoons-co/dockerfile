@@ -15,34 +15,34 @@ export default class DockerfileIntegrationTest {
 
     @Test
     public synthezesCorrectDockerfile(): void {
-        const packageJson = PackageJson.toObject();
+        const config = PackageJson.toObject();
 
         const compileStage =
             BuildStage.newBuilder()
                 .setName("microservice-compiler")
-                .setFrom(packageJson.microservice.image)
+                .setFrom(config.microservice.image)
                 .addLayer(
-                    User.of(packageJson.microservice.user),
-                    Workdir.of(packageJson.microservice.homedir),
-                    Copy.withChown(".", ".", packageJson.microservice.user),
-                    Run.of(packageJson.scripts.install_dev),
-                    Run.of(packageJson.scripts.prepack)
+                    User.of(config.microservice.user),
+                    Workdir.of(config.microservice.homedir),
+                    Copy.withChown(".", ".", config.microservice.user),
+                    Run.of(config.scripts.install_dev),
+                    Run.of(config.scripts.prepack)
                 )
                 .build();
 
         const microserviceStage =
             BuildStage.newBuilder()
-                .setFrom(packageJson.microservice.image)
+                .setFrom(config.microservice.image)
                 .addLayer(
-                    User.of(packageJson.microservice.user),
-                    Workdir.of(packageJson.microservice.homedir),
+                    User.of(config.microservice.user),
+                    Workdir.of(config.microservice.homedir),
                     Copy.fromStage(compileStage, "/home/node/dist/", "dist/"),
                     Copy.fromStage(compileStage, "/home/node/package.json", "."),
                     Env.of("NODE_ENV", "production"),
-                    Run.of(packageJson.scripts.install_prod),
-                    Expose.ofTcp(packageJson.microservice.port),
+                    Run.of(config.scripts.install_prod),
+                    Expose.ofTcp(config.microservice.port),
                     HealthCheck.of(Cmd.of("wget -q http://localhost/ || exit 1")),
-                    Cmd.of(packageJson.scripts.start)
+                    Cmd.of(config.scripts.start)
                 )
                 .build();
 

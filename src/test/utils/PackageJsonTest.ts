@@ -4,7 +4,6 @@
  * @license MIT
  */
 
-
 import {Test, TestClass} from "@raccoons-co/cleanway";
 import {assert} from "chai";
 import {PackageJson} from "../../main";

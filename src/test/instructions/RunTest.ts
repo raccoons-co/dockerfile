@@ -16,4 +16,11 @@ export default class RunTest {
         const instruction = Run.of("npm install --omit=dev --omit=optional --ignore-scripts");
         assert.equal(instruction.toString(), "RUN npm install --omit=dev --omit=optional --ignore-scripts");
     }
+
+    @Test
+    public returnsRunOfExecFormInstruction(): void {
+        const instruction = Run.ofExecForm("npm install --omit=dev --omit=optional --ignore-scripts");
+        assert.equal(instruction.toString(),
+            "RUN [\"npm\",\"install\",\"--omit=dev\",\"--omit=optional\",\"--ignore-scripts\"]");
+    }
 }
