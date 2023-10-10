@@ -19,6 +19,7 @@ import DockerfileIntegrationTest from "./DockerfileIntegrationTest";
 import PackageJsonTest from "./utils/PackageJsonTest";
 import VolumeTest from "./instructions/VolumeTest";
 import EntryPointTest from "./instructions/EntryPointTest";
+import ShellTest from "./instructions/ShellTest";
 
 CleanWayBuilder.instance()
     .use(ArgTest) // Dockerfile instructions tests
@@ -33,6 +34,7 @@ CleanWayBuilder.instance()
     .use(LabelTest)
     .use(OnBuildTest)
     .use(RunTest)
+    .use(ShellTest)
     .use(UserTest)
     .use(VolumeTest)
     .use(WorkdirTest)

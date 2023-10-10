@@ -16,13 +16,13 @@ export default class Cmd extends AbstractInstruction implements Committable {
         super("CMD", command);
     }
 
-    /** Returns a new `Cmd` instruction with shell form of given command. */
-    public static of(command: string): Cmd {
-        return new Cmd(command);
+    /** Returns a new `Cmd` instruction with exec form of given command. */
+    public static ofExec(command: string): Cmd {
+        return new Cmd(AbstractInstruction.execForm(command));
     }
 
-    /** Returns a new `Cmd` instruction with exec form of given command. */
-    public static ofExecForm(command: string): Cmd {
-        return new Cmd(AbstractInstruction.execForm(command));
+    /** Returns a new `Cmd` instruction with shell form of given command. */
+    public static ofShell(command: string): Cmd {
+        return new Cmd(command);
     }
 }

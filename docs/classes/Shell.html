@@ -1,4 +1,4 @@
-<!DOCTYPE html><html class="default" lang="en"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="IE=edge"/><title>Dockerfile | @raccoons-co/dockerfile</title><meta name="description" content="Documentation for @raccoons-co/dockerfile"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="../assets/style.css"/><link rel="stylesheet" href="../assets/highlight.css"/><script defer src="../assets/main.js"></script><script async src="../assets/search.js" id="tsd-search-script"></script><script async src="../assets/navigation.js" id="tsd-nav-script"></script></head><body><script>document.documentElement.dataset.theme = localStorage.getItem("tsd-theme") || "os"</script><header class="tsd-page-toolbar">
+<!DOCTYPE html><html class="default" lang="en"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="IE=edge"/><title>Shell | @raccoons-co/dockerfile</title><meta name="description" content="Documentation for @raccoons-co/dockerfile"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="../assets/style.css"/><link rel="stylesheet" href="../assets/highlight.css"/><script defer src="../assets/main.js"></script><script async src="../assets/search.js" id="tsd-search-script"></script><script async src="../assets/navigation.js" id="tsd-nav-script"></script></head><body><script>document.documentElement.dataset.theme = localStorage.getItem("tsd-theme") || "os"</script><header class="tsd-page-toolbar">
 <div class="tsd-toolbar-contents container">
 <div class="table-cell" id="tsd-search" data-base="..">
 <div class="field"><label for="tsd-search-field" class="tsd-widget tsd-toolbar-icon search no-caption"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><use href="#icon-search"></use></svg></label><input type="text" id="tsd-search-field" aria-label="Search"/></div>
@@ -13,18 +13,24 @@
 <div class="tsd-page-title">
 <ul class="tsd-breadcrumb">
 <li><a href="../modules.html">@raccoons-co/dockerfile</a></li>
-<li><a href="Dockerfile.html">Dockerfile</a></li></ul>
-<h1>Class Dockerfile</h1></div>
+<li><a href="Shell.html">Shell</a></li></ul>
+<h1>Class Shell</h1></div>
 <section class="tsd-panel tsd-comment">
-<div class="tsd-comment tsd-typography"><p>Represents a Dockerfile that can be synthesized into a file on the filesystem.</p>
+<div class="tsd-comment tsd-typography"><p>Represents a <a href="https://docs.docker.com/engine/reference/builder/#shell">SHELL</a> instruction.</p>
 </div>
 <div class="tsd-comment tsd-typography"></div></section>
 <section class="tsd-panel tsd-hierarchy">
 <h4>Hierarchy</h4>
 <ul class="tsd-hierarchy">
-<li><span class="target">Dockerfile</span></li></ul></section><aside class="tsd-sources">
+<li><span class="tsd-signature-type ">default</span>
+<ul class="tsd-hierarchy">
+<li><span class="target">Shell</span></li></ul></li></ul></section>
+<section class="tsd-panel">
+<h4>Implements</h4>
+<ul class="tsd-hierarchy">
+<li><a href="../interfaces/Committable.html" class="tsd-signature-type tsd-kind-interface">Committable</a></li></ul></section><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/raccoons-co/dockerfile/blob/e92d317/src/main/Dockerfile.ts#L18">Dockerfile.ts:18</a></li></ul></aside>
+<li>Defined in <a href="https://github.com/raccoons-co/dockerfile/blob/e92d317/src/main/instructions/Shell.ts#L13">instructions/Shell.ts:13</a></li></ul></aside>
 <section class="tsd-panel-group tsd-index-group">
 <section class="tsd-panel tsd-index-panel">
 <details class="tsd-index-content tsd-index-accordion" open><summary class="tsd-accordion-summary tsd-index-summary">
@@ -32,148 +38,96 @@
 <div class="tsd-accordion-details">
 <section class="tsd-index-section">
 <h3 class="tsd-index-heading">Constructors</h3>
-<div class="tsd-index-list"><a href="Dockerfile.html#constructor" class="tsd-index-link tsd-is-private"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-512"></use></svg><span>constructor</span></a>
-</div></section>
-<section class="tsd-index-section">
-<h3 class="tsd-index-heading">Properties</h3>
-<div class="tsd-index-list"><a href="Dockerfile.html#buildStages" class="tsd-index-link tsd-is-private"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-1024"></use></svg><span>build<wbr/>Stages</span></a>
-<a href="Dockerfile.html#dockerfileDirectory" class="tsd-index-link tsd-is-private"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-1024"></use></svg><span>dockerfile<wbr/>Directory</span></a>
-<a href="Dockerfile.html#dockerfileName" class="tsd-index-link tsd-is-private"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-1024"></use></svg><span>dockerfile<wbr/>Name</span></a>
+<div class="tsd-index-list"><a href="Shell.html#constructor" class="tsd-index-link tsd-is-private"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-512"></use></svg><span>constructor</span></a>
 </div></section>
 <section class="tsd-index-section">
 <h3 class="tsd-index-heading">Methods</h3>
-<div class="tsd-index-list"><a href="Dockerfile.html#directory" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2048"></use></svg><span>directory</span></a>
-<a href="Dockerfile.html#instructions" class="tsd-index-link tsd-is-private"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2048"></use></svg><span>instructions</span></a>
-<a href="Dockerfile.html#name" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2048"></use></svg><span>name</span></a>
-<a href="Dockerfile.html#path" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2048"></use></svg><span>path</span></a>
-<a href="Dockerfile.html#stages" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2048"></use></svg><span>stages</span></a>
-<a href="Dockerfile.html#synthesize" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2048"></use></svg><span>synthesize</span></a>
-<a href="Dockerfile.html#newBuilder" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2048"></use></svg><span>new<wbr/>Builder</span></a>
+<div class="tsd-index-list"><a href="Shell.html#accept" class="tsd-index-link tsd-is-inherited"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2048"></use></svg><span>accept</span></a>
+<a href="Shell.html#toString" class="tsd-index-link tsd-is-inherited"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2048"></use></svg><span>to<wbr/>String</span></a>
+<a href="Shell.html#execForm" class="tsd-index-link tsd-is-protected tsd-is-inherited"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2048"></use></svg><span>exec<wbr/>Form</span></a>
+<a href="Shell.html#of" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2048"></use></svg><span>of</span></a>
 </div></section></div></details></section></section>
 <section class="tsd-panel-group tsd-member-group">
 <h2>Constructors</h2>
 <section class="tsd-panel tsd-member tsd-is-private"><a id="constructor" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagPrivate">Private</code> <span>constructor</span><a href="#constructor" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-is-private">
-<li class="tsd-signature tsd-anchor-link" id="constructor.new_Dockerfile"><span class="tsd-kind-constructor-signature">new <wbr/>Dockerfile</span><span class="tsd-signature-symbol">(</span><span class="tsd-kind-parameter">dockerfileName</span>, <span class="tsd-kind-parameter">dockerfileDirectory</span>, <span class="tsd-kind-parameter">buildStages</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="Dockerfile.html" class="tsd-signature-type tsd-kind-class">Dockerfile</a><a href="#constructor.new_Dockerfile" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></li>
+<li class="tsd-signature tsd-anchor-link" id="constructor.new_Shell"><span class="tsd-kind-constructor-signature">new <wbr/>Shell</span><span class="tsd-signature-symbol">(</span><span class="tsd-kind-parameter">command</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="Shell.html" class="tsd-signature-type tsd-kind-class">Shell</a><a href="#constructor.new_Shell" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></li>
 <li class="tsd-description">
 <div class="tsd-parameters">
 <h4 class="tsd-parameters-title">Parameters</h4>
 <ul class="tsd-parameter-list">
 <li>
-<h5><span class="tsd-kind-parameter">dockerfileName</span>: <span class="tsd-signature-type">string</span></h5></li>
-<li>
-<h5><span class="tsd-kind-parameter">dockerfileDirectory</span>: <span class="tsd-signature-type">string</span></h5></li>
-<li>
-<h5><span class="tsd-kind-parameter">buildStages</span>: <span class="tsd-signature-symbol">readonly </span><a href="BuildStage.html" class="tsd-signature-type tsd-kind-class">BuildStage</a><span class="tsd-signature-symbol">[]</span></h5></li></ul></div>
-<h4 class="tsd-returns-title">Returns <a href="Dockerfile.html" class="tsd-signature-type tsd-kind-class">Dockerfile</a></h4><aside class="tsd-sources">
+<h5><span class="tsd-kind-parameter">command</span>: <span class="tsd-signature-type">string</span></h5></li></ul></div>
+<h4 class="tsd-returns-title">Returns <a href="Shell.html" class="tsd-signature-type tsd-kind-class">Shell</a></h4><aside class="tsd-sources">
+<p>Overrides AbstractInstruction.constructor</p>
 <ul>
-<li>Defined in <a href="https://github.com/raccoons-co/dockerfile/blob/e92d317/src/main/Dockerfile.ts#L29">Dockerfile.ts:29</a></li></ul></aside></li></ul></section></section>
-<section class="tsd-panel-group tsd-member-group">
-<h2>Properties</h2>
-<section class="tsd-panel tsd-member tsd-is-private"><a id="buildStages" class="tsd-anchor"></a>
-<h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagPrivate">Private</code> <code class="tsd-tag ts-flagReadonly">Readonly</code> <span>build<wbr/>Stages</span><a href="#buildStages" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
-<div class="tsd-signature"><span class="tsd-kind-property">build<wbr/>Stages</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">readonly </span><a href="BuildStage.html" class="tsd-signature-type tsd-kind-class">BuildStage</a><span class="tsd-signature-symbol">[]</span></div>
-<div class="tsd-comment tsd-typography"><p>The build stages.</p>
-</div>
-<div class="tsd-comment tsd-typography"></div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/raccoons-co/dockerfile/blob/e92d317/src/main/Dockerfile.ts#L27">Dockerfile.ts:27</a></li></ul></aside></section>
-<section class="tsd-panel tsd-member tsd-is-private"><a id="dockerfileDirectory" class="tsd-anchor"></a>
-<h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagPrivate">Private</code> <code class="tsd-tag ts-flagReadonly">Readonly</code> <span>dockerfile<wbr/>Directory</span><a href="#dockerfileDirectory" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
-<div class="tsd-signature"><span class="tsd-kind-property">dockerfile<wbr/>Directory</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
-<div class="tsd-comment tsd-typography"><p>The directory name for the generated Dockerfile.</p>
-</div>
-<div class="tsd-comment tsd-typography"></div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/raccoons-co/dockerfile/blob/e92d317/src/main/Dockerfile.ts#L24">Dockerfile.ts:24</a></li></ul></aside></section>
-<section class="tsd-panel tsd-member tsd-is-private"><a id="dockerfileName" class="tsd-anchor"></a>
-<h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagPrivate">Private</code> <code class="tsd-tag ts-flagReadonly">Readonly</code> <span>dockerfile<wbr/>Name</span><a href="#dockerfileName" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
-<div class="tsd-signature"><span class="tsd-kind-property">dockerfile<wbr/>Name</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
-<div class="tsd-comment tsd-typography"><p>The Dockerfile name to generate.</p>
-</div>
-<div class="tsd-comment tsd-typography"></div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/raccoons-co/dockerfile/blob/e92d317/src/main/Dockerfile.ts#L21">Dockerfile.ts:21</a></li></ul></aside></section></section>
+<li>Defined in <a href="https://github.com/raccoons-co/dockerfile/blob/e92d317/src/main/instructions/Shell.ts#L15">instructions/Shell.ts:15</a></li></ul></aside></li></ul></section></section>
 <section class="tsd-panel-group tsd-member-group">
 <h2>Methods</h2>
-<section class="tsd-panel tsd-member"><a id="directory" class="tsd-anchor"></a>
-<h3 class="tsd-anchor-link"><span>directory</span><a href="#directory" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
-<ul class="tsd-signatures">
-<li class="tsd-signature tsd-anchor-link" id="directory.directory-1"><span class="tsd-kind-call-signature">directory</span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><a href="#directory.directory-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></li>
+<section class="tsd-panel tsd-member tsd-is-inherited"><a id="accept" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><span>accept</span><a href="#accept" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
+<ul class="tsd-signatures tsd-is-inherited">
+<li class="tsd-signature tsd-anchor-link" id="accept.accept-1"><span class="tsd-kind-call-signature">accept</span><span class="tsd-signature-symbol">(</span><span class="tsd-kind-parameter">writer</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span><a href="#accept.accept-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></li>
 <li class="tsd-description">
-<div class="tsd-comment tsd-typography"><p>Returns the Dockerfile directory.</p>
+<div class="tsd-comment tsd-typography"><p>Adds the string representation of this instruction to <code>DockerfileWriter</code>.</p>
 </div>
-<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
-<div class="tsd-comment tsd-typography"></div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/raccoons-co/dockerfile/blob/e92d317/src/main/Dockerfile.ts#L81">Dockerfile.ts:81</a></li></ul></aside></li></ul></section>
-<section class="tsd-panel tsd-member tsd-is-private"><a id="instructions" class="tsd-anchor"></a>
-<h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagPrivate">Private</code> <span>instructions</span><a href="#instructions" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
-<ul class="tsd-signatures tsd-is-private">
-<li class="tsd-signature tsd-anchor-link" id="instructions.instructions-1"><span class="tsd-kind-call-signature">instructions</span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">readonly </span><a href="../interfaces/DockerfileInstruction.html" class="tsd-signature-type tsd-kind-interface">DockerfileInstruction</a><span class="tsd-signature-symbol">[]</span><a href="#instructions.instructions-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></li>
-<li class="tsd-description">
-<div class="tsd-comment tsd-typography"><p>Returns all instructions from all build stages.</p>
-</div>
-<h4 class="tsd-returns-title">Returns <span class="tsd-signature-symbol">readonly </span><a href="../interfaces/DockerfileInstruction.html" class="tsd-signature-type tsd-kind-interface">DockerfileInstruction</a><span class="tsd-signature-symbol">[]</span></h4>
-<div class="tsd-comment tsd-typography"></div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/raccoons-co/dockerfile/blob/e92d317/src/main/Dockerfile.ts#L110">Dockerfile.ts:110</a></li></ul></aside></li></ul></section>
-<section class="tsd-panel tsd-member"><a id="name" class="tsd-anchor"></a>
-<h3 class="tsd-anchor-link"><span>name</span><a href="#name" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
-<ul class="tsd-signatures">
-<li class="tsd-signature tsd-anchor-link" id="name.name-1"><span class="tsd-kind-call-signature">name</span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><a href="#name.name-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></li>
-<li class="tsd-description">
-<div class="tsd-comment tsd-typography"><p>Returns the Dockerfile name.</p>
-</div>
-<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
-<div class="tsd-comment tsd-typography"></div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/raccoons-co/dockerfile/blob/e92d317/src/main/Dockerfile.ts#L76">Dockerfile.ts:76</a></li></ul></aside></li></ul></section>
-<section class="tsd-panel tsd-member"><a id="path" class="tsd-anchor"></a>
-<h3 class="tsd-anchor-link"><span>path</span><a href="#path" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
-<ul class="tsd-signatures">
-<li class="tsd-signature tsd-anchor-link" id="path.path-1"><span class="tsd-kind-call-signature">path</span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><a href="#path.path-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></li>
-<li class="tsd-description">
-<div class="tsd-comment tsd-typography"><p>Returns the Dockerfile path.</p>
-</div>
-<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
-<div class="tsd-comment tsd-typography"></div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/raccoons-co/dockerfile/blob/e92d317/src/main/Dockerfile.ts#L86">Dockerfile.ts:86</a></li></ul></aside></li></ul></section>
-<section class="tsd-panel tsd-member"><a id="stages" class="tsd-anchor"></a>
-<h3 class="tsd-anchor-link"><span>stages</span><a href="#stages" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
-<ul class="tsd-signatures">
-<li class="tsd-signature tsd-anchor-link" id="stages.stages-1"><span class="tsd-kind-call-signature">stages</span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">readonly </span><a href="BuildStage.html" class="tsd-signature-type tsd-kind-class">BuildStage</a><span class="tsd-signature-symbol">[]</span><a href="#stages.stages-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></li>
-<li class="tsd-description"><code class="tsd-tag ts-flagInternal">Internal</code> 
-<div class="tsd-comment tsd-typography"><p>Returns the Dockerfile build stages.</p>
-</div>
-<h4 class="tsd-returns-title">Returns <span class="tsd-signature-symbol">readonly </span><a href="BuildStage.html" class="tsd-signature-type tsd-kind-class">BuildStage</a><span class="tsd-signature-symbol">[]</span></h4>
-<div class="tsd-comment tsd-typography"></div><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/raccoons-co/dockerfile/blob/e92d317/src/main/Dockerfile.ts#L95">Dockerfile.ts:95</a></li></ul></aside></li></ul></section>
-<section class="tsd-panel tsd-member"><a id="synthesize" class="tsd-anchor"></a>
-<h3 class="tsd-anchor-link"><span>synthesize</span><a href="#synthesize" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
-<ul class="tsd-signatures">
-<li class="tsd-signature tsd-anchor-link" id="synthesize.synthesize-1"><span class="tsd-kind-call-signature">synthesize</span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span><a href="#synthesize.synthesize-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></li>
-<li class="tsd-description">
-<div class="tsd-comment tsd-typography"><p>Synthesizes a Dockerfile to the filesystem.</p>
-</div>
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li>
+<h5><span class="tsd-kind-parameter">writer</span>: <span class="tsd-signature-type ">default</span></h5></li></ul></div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 <div class="tsd-comment tsd-typography"></div><aside class="tsd-sources">
+<p>Implementation of <a href="../interfaces/Committable.html">Committable</a>.<a href="../interfaces/Committable.html#accept">accept</a></p>
+<p>Inherited from AbstractInstruction.accept</p>
 <ul>
-<li>Defined in <a href="https://github.com/raccoons-co/dockerfile/blob/e92d317/src/main/Dockerfile.ts#L100">Dockerfile.ts:100</a></li></ul></aside></li></ul></section>
-<section class="tsd-panel tsd-member"><a id="newBuilder" class="tsd-anchor"></a>
-<h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagStatic">Static</code> <span>new<wbr/>Builder</span><a href="#newBuilder" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
-<ul class="tsd-signatures">
-<li class="tsd-signature tsd-anchor-link" id="newBuilder.newBuilder-1"><span class="tsd-kind-call-signature">new<wbr/>Builder</span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/DockerfileBuilder.html" class="tsd-signature-type tsd-kind-interface">DockerfileBuilder</a><a href="#newBuilder.newBuilder-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></li>
+<li>Defined in <a href="https://github.com/raccoons-co/dockerfile/blob/e92d317/src/main/instructions/AbstractInstruction.ts#L30">instructions/AbstractInstruction.ts:30</a></li></ul></aside></li></ul></section>
+<section class="tsd-panel tsd-member tsd-is-inherited"><a id="toString" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><span>to<wbr/>String</span><a href="#toString" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
+<ul class="tsd-signatures tsd-is-inherited">
+<li class="tsd-signature tsd-anchor-link" id="toString.toString-1"><span class="tsd-kind-call-signature">to<wbr/>String</span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><a href="#toString.toString-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></li>
 <li class="tsd-description">
-<div class="tsd-comment tsd-typography"><p>Returns a new instance of the <code>DockerfileBuilder</code>.</p>
+<div class="tsd-comment tsd-typography"><p>Returns the string representation for this instruction.</p>
 </div>
-<h4 class="tsd-returns-title">Returns <a href="../interfaces/DockerfileBuilder.html" class="tsd-signature-type tsd-kind-interface">DockerfileBuilder</a></h4>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+<div class="tsd-comment tsd-typography"></div><aside class="tsd-sources">
+<p>Inherited from AbstractInstruction.toString</p>
+<ul>
+<li>Defined in <a href="https://github.com/raccoons-co/dockerfile/blob/e92d317/src/main/instructions/AbstractInstruction.ts#L25">instructions/AbstractInstruction.ts:25</a></li></ul></aside></li></ul></section>
+<section class="tsd-panel tsd-member tsd-is-protected tsd-is-inherited"><a id="execForm" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagStatic">Static</code> <code class="tsd-tag ts-flagProtected">Protected</code> <span>exec<wbr/>Form</span><a href="#execForm" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
+<ul class="tsd-signatures tsd-is-protected tsd-is-inherited">
+<li class="tsd-signature tsd-anchor-link" id="execForm.execForm-1"><span class="tsd-kind-call-signature">exec<wbr/>Form</span><span class="tsd-signature-symbol">(</span><span class="tsd-kind-parameter">shellCommand</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><a href="#execForm.execForm-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></li>
+<li class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Returns exec form of shell command string.</p>
+</div>
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li>
+<h5><span class="tsd-kind-parameter">shellCommand</span>: <span class="tsd-signature-type">string</span></h5></li></ul></div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+<div class="tsd-comment tsd-typography"></div><aside class="tsd-sources">
+<p>Inherited from AbstractInstruction.execForm</p>
+<ul>
+<li>Defined in <a href="https://github.com/raccoons-co/dockerfile/blob/e92d317/src/main/instructions/AbstractInstruction.ts#L36">instructions/AbstractInstruction.ts:36</a></li></ul></aside></li></ul></section>
+<section class="tsd-panel tsd-member"><a id="of" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagStatic">Static</code> <span>of</span><a href="#of" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
+<ul class="tsd-signatures">
+<li class="tsd-signature tsd-anchor-link" id="of.of-1"><span class="tsd-kind-call-signature">of</span><span class="tsd-signature-symbol">(</span><span class="tsd-kind-parameter">command</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="Shell.html" class="tsd-signature-type tsd-kind-class">Shell</a><a href="#of.of-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></li>
+<li class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Returns a new <code>Run</code> instruction with exec form of given command.</p>
+</div>
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li>
+<h5><span class="tsd-kind-parameter">command</span>: <span class="tsd-signature-type">string</span></h5></li></ul></div>
+<h4 class="tsd-returns-title">Returns <a href="Shell.html" class="tsd-signature-type tsd-kind-class">Shell</a></h4>
 <div class="tsd-comment tsd-typography"></div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/raccoons-co/dockerfile/blob/e92d317/src/main/Dockerfile.ts#L36">Dockerfile.ts:36</a></li></ul></aside></li></ul></section></section></div>
+<li>Defined in <a href="https://github.com/raccoons-co/dockerfile/blob/e92d317/src/main/instructions/Shell.ts#L20">instructions/Shell.ts:20</a></li></ul></aside></li></ul></section></section></div>
 <div class="col-sidebar">
 <div class="page-menu">
 <div class="tsd-navigation settings">
@@ -194,16 +148,10 @@
 <div class="tsd-accordion-details">
 <ul>
 <li><a href="#constructor" class="tsd-is-private"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-512"></use></svg><span>constructor</span></a></li>
-<li><a href="#buildStages" class="tsd-is-private"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-1024"></use></svg><span>build<wbr/>Stages</span></a></li>
-<li><a href="#dockerfileDirectory" class="tsd-is-private"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-1024"></use></svg><span>dockerfile<wbr/>Directory</span></a></li>
-<li><a href="#dockerfileName" class="tsd-is-private"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-1024"></use></svg><span>dockerfile<wbr/>Name</span></a></li>
-<li><a href="#directory" class=""><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2048"></use></svg><span>directory</span></a></li>
-<li><a href="#instructions" class="tsd-is-private"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2048"></use></svg><span>instructions</span></a></li>
-<li><a href="#name" class=""><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2048"></use></svg><span>name</span></a></li>
-<li><a href="#path" class=""><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2048"></use></svg><span>path</span></a></li>
-<li><a href="#stages" class=""><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2048"></use></svg><span>stages</span></a></li>
-<li><a href="#synthesize" class=""><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2048"></use></svg><span>synthesize</span></a></li>
-<li><a href="#newBuilder" class=""><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2048"></use></svg><span>new<wbr/>Builder</span></a></li></ul></div></details></div>
+<li><a href="#accept" class="tsd-is-inherited"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2048"></use></svg><span>accept</span></a></li>
+<li><a href="#toString" class="tsd-is-inherited"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2048"></use></svg><span>to<wbr/>String</span></a></li>
+<li><a href="#execForm" class="tsd-is-protected tsd-is-inherited"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2048"></use></svg><span>exec<wbr/>Form</span></a></li>
+<li><a href="#of" class=""><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2048"></use></svg><span>of</span></a></li></ul></div></details></div>
 <div class="site-menu">
 <nav class="tsd-navigation"><a href="../modules.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-1"></use></svg><span>@raccoons-co/dockerfile</span></a>
 <ul class="tsd-small-nested-navigation" id="tsd-nav-container" data-base="..">
@@ -212,7 +160,7 @@
 <li><a href="BuildStage.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-128"></use></svg>BuildStage</a></li>
 <li><a href="Cmd.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-128"></use></svg>Cmd</a></li>
 <li><a href="Copy.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-128"></use></svg>Copy</a></li>
-<li><a href="Dockerfile.html" class="current"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-128"></use></svg>Dockerfile</a></li>
+<li><a href="Dockerfile.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-128"></use></svg>Dockerfile</a></li>
 <li><a href="EntryPoint.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-128"></use></svg>EntryPoint</a></li>
 <li><a href="Env.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-128"></use></svg>Env</a></li>
 <li><a href="Expose.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-128"></use></svg>Expose</a></li>
@@ -221,7 +169,7 @@
 <li><a href="OnBuild.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-128"></use></svg>OnBuild</a></li>
 <li><a href="PackageJson.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-128"></use></svg>PackageJson</a></li>
 <li><a href="Run.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-128"></use></svg>Run</a></li>
-<li><a href="Shell.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-128"></use></svg>Shell</a></li>
+<li><a href="Shell.html" class="current"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-128"></use></svg>Shell</a></li>
 <li><a href="User.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-128"></use></svg>User</a></li>
 <li><a href="Volume.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-128"></use></svg>Volume</a></li>
 <li><a href="Workdir.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-128"></use></svg>Workdir</a></li>

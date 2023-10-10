@@ -1,6 +1,6 @@
 {
   "name": "@raccoons-co/dockerfile",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "description": "The Dockerfile generation API.",
   "keywords": [
     "Dockerfile",
@@ -15,24 +15,27 @@
   "files": [
     "lib/"
   ],
-  "main": "lib/main/index.js",
-  "types": "lib/main/index.d.ts",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/raccoons-co/dockerfile.git"
   },
   "scripts": {
     "compile": "tsc",
-    "generate": "ts-node src/build/Dockerfile.ts",
+    "docs": "typedoc ./src/main/index.ts",
+    "generate": "ts-node src/test/.indocker/Dockerfile.ts",
     "install_dev": "npm install",
     "install_prod": "npm install --omit=dev --omit=optional --ignore-scripts",
     "lint.packagejson": "npmPkgJsonLint . --ignorePath .npmpackagejsonlintignore",
     "lint.typescript": "eslint './src/**/*.ts'",
-    "postlint.typescript": "typedoc ./src/main/index.ts",
+    "postgenerate": "docker run --rm -i hadolint/hadolint hadolint --ignore=DL3059 - < ./generated/docker/Dockerfile",
     "posttest": "npm-run-all lint.*",
     "prepack": "npm run compile",
+    "pretest.indocker": "npm run generate",
     "start": "npm run this.microservice",
     "test": "nyc ts-node src/test/EntryPoint",
+    "test.indocker": "docker buildx build --rm --tag tind --file ./generated/docker/tind.Dockerfile .",
     "this.microservice": "node dist/main/EntryPoint"
   },
   "dependencies": {
@@ -60,7 +63,7 @@
     "access": "public",
     "registry": "https://registry.npmjs.org/"
   },
-  "microservice": {
+  "docker": {
     "image": "node:lts-alpine",
     "user": "node",
     "homedir": "/home/node",
