@@ -15,21 +15,21 @@
   "files": [
     "lib/"
   ],
-  "main": "lib/main/index.js",
-  "types": "lib/main/index.d.ts",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/raccoons-co/dockerfile.git"
   },
   "scripts": {
     "compile": "tsc",
+    "docs": "typedoc ./src/main/index.ts",
     "generate": "ts-node src/test/.indocker/Dockerfile.ts",
     "install_dev": "npm install",
     "install_prod": "npm install --omit=dev --omit=optional --ignore-scripts",
     "lint.packagejson": "npmPkgJsonLint . --ignorePath .npmpackagejsonlintignore",
     "lint.typescript": "eslint './src/**/*.ts'",
     "postgenerate": "docker run --rm -i hadolint/hadolint hadolint --ignore=DL3059 - < ./generated/docker/Dockerfile",
-    "postlint.typescript": "typedoc ./src/main/index.ts",
     "posttest": "npm-run-all lint.*",
     "prepack": "npm run compile",
     "pretest.indocker": "npm run generate",
