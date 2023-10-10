@@ -5,12 +5,24 @@
  *
  */
 
-import {BuildStage, Cmd, Copy, Dockerfile, Env, Expose, OnBuild, PackageJson, Run, User, Workdir} from "../../main";
-import HealthCheck from "../../main/instructions/HealthCheck";
+import {
+        BuildStage,
+        Cmd,
+        Copy,
+        Dockerfile,
+        Env,
+        Expose,
+        HealthCheck,
+        OnBuild,
+        PackageJson,
+        Run,
+        User,
+        Workdir
+} from "../../main";
 
 const config = PackageJson.toObject();
 
-const testStage =
+const compileStage =
     BuildStage.newBuilder()
         .setName("test-in-docker")
         .setFrom(config.docker.image)
@@ -19,18 +31,7 @@ const testStage =
             Workdir.of(config.docker.homedir),
             Copy.withChown(".", ".", config.docker.user),
             Run.ofShell(config.scripts.install_dev),
-            Run.ofShell("npm test")
-        )
-        .build();
-
-const compileStage =
-    BuildStage.newBuilder()
-        .setName("compiler")
-        .setFrom(config.docker.image)
-        .addLayer(
-            User.of(config.docker.user),
-            Workdir.of(config.docker.homedir),
-            Copy.fromStage(testStage, "/home/node/", "."),
+            Run.ofShell("npm test"),
             Run.ofShell(config.scripts.prepack)
         )
         .build();
@@ -56,7 +57,6 @@ const microserviceStage =
 const dockerfile =
     Dockerfile.newBuilder()
         .setName("tind.Dockerfile")
-        .addStage(testStage)
         .addStage(compileStage)
         .addStage(microserviceStage)
         .build();

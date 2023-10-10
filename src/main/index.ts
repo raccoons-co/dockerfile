@@ -12,6 +12,7 @@ import Copy from "./instructions/Copy";
 import EntryPoint from "./instructions/EntryPoint";
 import Env from "./instructions/Env";
 import Expose from "./instructions/Expose";
+import HealthCheck from "./instructions/HealthCheck";
 import Label from "./instructions/Label";
 import OnBuild from "./instructions/OnBuild";
 import Run from "./instructions/Run";
@@ -42,6 +43,7 @@ export {
     EntryPoint,
     Env,
     Expose,
+    HealthCheck,
     Label,
     OnBuild,
     Run,
