@@ -1,6 +1,6 @@
 {
   "name": "@raccoons-co/dockerfile",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "The Dockerfile generation API.",
   "keywords": [
     "Dockerfile",
@@ -22,21 +22,22 @@
     "url": "git+https://github.com/raccoons-co/dockerfile.git"
   },
   "scripts": {
-    "compile": "tsc",
+    "build": "tsc",
     "docs": "typedoc ./src/main/index.ts",
-    "generate": "ts-node src/test/.indocker/Dockerfile.ts",
+    "generate:dockerfile": "ts-node src/test/.indocker/Dockerfile.ts",
     "install_dev": "npm install",
     "install_prod": "npm install --omit=dev --omit=optional --ignore-scripts",
-    "lint.packagejson": "npmPkgJsonLint . --ignorePath .npmpackagejsonlintignore",
-    "lint.typescript": "eslint './src/**/*.ts'",
-    "postgenerate": "docker run --rm -i hadolint/hadolint hadolint --ignore=DL3059 - < ./generated/docker/Dockerfile",
-    "posttest": "npm-run-all lint.*",
-    "prepack": "npm run compile",
-    "pretest.indocker": "npm run generate",
-    "start": "npm run this.microservice",
-    "test": "nyc ts-node src/test/EntryPoint",
-    "test.indocker": "docker buildx build --rm --tag tind --file ./generated/docker/tind.Dockerfile .",
-    "this.microservice": "node dist/main/EntryPoint"
+    "lint:packagejson": "npmPkgJsonLint . --ignorePath .npmpackagejsonlintignore",
+    "lint:typescript": "eslint './src/**/*.ts'",
+    "postgenerate": "docker run --rm -i hadolint/hadolint hadolint --ignore=DL3059 - < ./generated/docker/tind.Dockerfile",
+    "posttest": "npm-run-all lint:*",
+    "prepack": "npm run build",
+    "pretest:indocker": "npm run generate:dockerfile",
+    "start": "npm run this:microservice",
+    "test": "npm run test:coverage",
+    "test:coverage": "nyc ts-node src/test/EntryPoint",
+    "test:indocker": "docker buildx build --rm --tag indocker --file ./generated/docker/tind.Dockerfile .",
+    "this:microservice": "node dist/EntryPoint"
   },
   "dependencies": {
     "@raccoons-co/ethics": "^0.4.3"

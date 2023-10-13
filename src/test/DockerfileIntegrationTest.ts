@@ -6,9 +6,22 @@
 
 import {Test, TestClass} from "@raccoons-co/cleanway";
 import {assert} from "chai";
-import {BuildStage, Cmd, Copy, Dockerfile, Env, Expose, OnBuild, PackageJson, Run, User, Workdir} from "../main";
+import {
+    BuildStage,
+    Cmd,
+    Copy,
+    Dockerfile,
+    Env,
+    Expose,
+    HealthCheck,
+    OnBuild,
+    PackageJson,
+    Run, Signal,
+    StopSignal,
+    User,
+    Workdir
+} from "../main";
 import {existsSync} from "node:fs";
-import HealthCheck from "../main/instructions/HealthCheck";
 
 @TestClass
 export default class DockerfileIntegrationTest {
@@ -42,6 +55,7 @@ export default class DockerfileIntegrationTest {
                     Run.ofShell(config.scripts.install_prod),
                     Expose.ofTcp(config.docker.port),
                     HealthCheck.of(Cmd.ofShell("wget -q http://localhost/ || exit 1")),
+                    StopSignal.of(Signal.SIGINT),
                     OnBuild.of(Run.ofShell("exit 1")),
                     Cmd.ofExec(config.scripts.start)
                 )
@@ -49,6 +63,7 @@ export default class DockerfileIntegrationTest {
 
         const dockerfile =
             Dockerfile.newBuilder()
+                .setName("test.Dockerfile")
                 .addStage(compileStage)
                 .addStage(microserviceStage)
                 .build();
