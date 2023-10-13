@@ -49,6 +49,7 @@ export default class DockerfileIntegrationTest {
 
         const dockerfile =
             Dockerfile.newBuilder()
+                .setName("test.Dockerfile")
                 .addStage(compileStage)
                 .addStage(microserviceStage)
                 .build();
