@@ -3,6 +3,7 @@ import ArgTest from "./instructions/ArgTest";
 import CmdTest from "./instructions/CmdTest";
 import CommentDirectiveTest from "./instructions/CommentDirectiveTest";
 import CopyTest from "./instructions/CopyTest";
+import EntryPointTest from "./instructions/EntryPointTest";
 import EnvTest from "./instructions/EnvTest";
 import ExposeTest from "./instructions/ExposeTest";
 import FromTest from "./instructions/FromTest";
@@ -10,16 +11,16 @@ import HealthCheckTest from "./instructions/HealthCheckTest";
 import LabelTest from "./instructions/LabelTest";
 import OnBuildTest from "./instructions/OnBuildTest";
 import RunTest from "./instructions/RunTest";
+import ShellTest from "./instructions/ShellTest";
+import StopSignalTest from "./instructions/StopSignalTest";
 import UserTest from "./instructions/UserTest";
+import VolumeTest from "./instructions/VolumeTest";
 import WorkdirTest from "./instructions/WorkdirTest";
 import BuildStageTest from "./BuildStageTest";
 import DockerfileTest from "./DockerfileTest";
 import DockerfileWriterTest from "./DockerfileWriterTest";
 import DockerfileIntegrationTest from "./DockerfileIntegrationTest";
 import PackageJsonTest from "./utils/PackageJsonTest";
-import VolumeTest from "./instructions/VolumeTest";
-import EntryPointTest from "./instructions/EntryPointTest";
-import ShellTest from "./instructions/ShellTest";
 
 CleanWayBuilder.instance()
     .use(ArgTest) // Dockerfile instructions tests
@@ -35,6 +36,7 @@ CleanWayBuilder.instance()
     .use(OnBuildTest)
     .use(RunTest)
     .use(ShellTest)
+    .use(StopSignalTest)
     .use(UserTest)
     .use(VolumeTest)
     .use(WorkdirTest)

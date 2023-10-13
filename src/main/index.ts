@@ -17,6 +17,8 @@ import Label from "./instructions/Label";
 import OnBuild from "./instructions/OnBuild";
 import Run from "./instructions/Run";
 import Shell from "./instructions/Shell";
+import {Signal} from "./instructions/Signal";
+import StopSignal from "./instructions/StopSignal";
 import User from "./instructions/User";
 import Volume from "./instructions/Volume";
 import Workdir from "./instructions/Workdir";
@@ -48,6 +50,8 @@ export {
     OnBuild,
     Run,
     Shell,
+    Signal,
+    StopSignal,
     User,
     Volume,
     Workdir,
