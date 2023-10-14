@@ -21,8 +21,10 @@ import DockerfileTest from "./DockerfileTest";
 import DockerfileWriterTest from "./DockerfileWriterTest";
 import DockerfileIntegrationTest from "./DockerfileIntegrationTest";
 import PackageJsonTest from "./utils/PackageJsonTest";
+import AddTest from "./instructions/AddTest";
 
 CleanWayBuilder.instance()
+    .use(AddTest)
     .use(ArgTest) // Dockerfile instructions tests
     .use(CmdTest)
     .use(CommentDirectiveTest)

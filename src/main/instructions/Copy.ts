@@ -14,8 +14,8 @@ import BuildStage from "../BuildStage";
  */
 export default class Copy extends AbstractInstruction implements Committable {
 
-    private constructor(copyArgs: string) {
-        super("COPY", copyArgs);
+    private constructor(instructionAgruments: string) {
+        super("COPY", instructionAgruments);
     }
 
     /** Returns a new `Copy` instruction of given source and destination arguments. */
