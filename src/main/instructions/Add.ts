@@ -18,7 +18,12 @@ export default class Add extends AbstractInstruction implements Committable {
         super("ADD", instructionAgruments);
     }
 
-    /** Returns a new `Add` instruction of given source and destination arguments. */
+    /**
+     * Returns a new `Add` instruction of given source and destination arguments.
+     *
+     * @param source - the file, directory or remote file URL
+     * @param destination - the path on the filesystem of the image
+     */
     public static of(source: string, destination: string): Add {
         Strict.notNull(source);
         Strict.notNull(destination);
@@ -26,8 +31,11 @@ export default class Add extends AbstractInstruction implements Committable {
     }
 
     /**
-     * Returns a new `Add` instruction of given git repository and optionally .git directory.
+     * Returns a new `Add` instruction of given Git repository.
      * {@link https://docs.docker.com/engine/reference/builder/#adding-a-git-repository-add-git-ref-dir}
+     *
+     * @param gitReference - the git repository reference
+     * @param directory - the path on the filesystem of the image
      */
     public static ofGit(gitReference: string, directory: string): Add {
         Strict.notNull(gitReference);
@@ -38,6 +46,9 @@ export default class Add extends AbstractInstruction implements Committable {
     /**
      * Returns a new `Add` instruction of given git repository and add .git directory.
      * {@link https://docs.docker.com/engine/reference/builder/#adding-a-git-repository-add-git-ref-dir}
+     *
+     * @param gitReference - the git repository reference
+     * @param directory - the path on the filesystem of the image
      */
     public static ofGitKeepDir(gitReference: string, directory: string): Add {
         Strict.notNull(gitReference);
@@ -59,7 +70,14 @@ export default class Add extends AbstractInstruction implements Committable {
         return new Add(`--checksum=${checkSum} ${sourceUrl} ${destination}`);
     }
 
-    /** Returns a new `Add` instruction of given source, destination, chown arguments and optionally chmod. */
+    /**
+     * Returns a new `Add` instruction of given source, destination, chown arguments and optionally chmod.
+     *
+     * @param source - the file, directory or remote file URL
+     * @param destination - the path on the filesystem of the image
+     * @param chown - the username, groupname, or UID/GID to request specific ownership of the content added
+     * @param chmod - the destination permissions
+     */
     public static withChown(source: string, destination: string, chown: string, chmod?: string): Add {
         Strict.notNull(source);
         Strict.notNull(destination);
@@ -69,5 +87,4 @@ export default class Add extends AbstractInstruction implements Committable {
             ? new Add(`--chown=${chown} ${source} ${destination}`)
             : new Add(`--chown=${chown} --chmod=${chmod} ${source} ${destination}`);
     }
-
 }
