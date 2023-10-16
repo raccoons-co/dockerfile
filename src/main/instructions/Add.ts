@@ -4,7 +4,7 @@
  * @license MIT
  */
 
-import {Optional, Strict} from "@raccoons-co/ethics";
+import {Strict} from "@raccoons-co/ethics";
 import {URL} from "node:url";
 import AbstractInstruction from "./AbstractInstruction";
 import Committable from "./Committable";
@@ -75,16 +75,15 @@ export default class Add extends AbstractInstruction implements Committable {
      *
      * @param source - the file, directory or remote file URL
      * @param destination - the path on the filesystem of the image
-     * @param chown - the username, groupname, or UID/GID to request specific ownership of the content added
+     * @param chown - the username, groupname, or UID/GID to request specific ownership of the content
      * @param chmod - the destination permissions
      */
     public static withChown(source: string, destination: string, chown: string, chmod?: string): Add {
         Strict.notNull(source);
         Strict.notNull(destination);
         Strict.notNull(chown);
-        const maybeChmod = Optional.ofNullable(chmod);
-        return maybeChmod.isEmpty()
-            ? new Add(`--chown=${chown} ${source} ${destination}`)
-            : new Add(`--chown=${chown} --chmod=${chmod} ${source} ${destination}`);
+        return chmod
+            ? new Add(`--chown=${chown} --chmod=${chmod} ${source} ${destination}`)
+            : new Add(`--chown=${chown} ${source} ${destination}`);
     }
 }

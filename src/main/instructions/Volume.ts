@@ -22,5 +22,4 @@ export default class Volume extends AbstractInstruction implements Committable {
         Strict.notNull(data);
         return new Volume(JSON.stringify(data));
     }
-
 }

@@ -20,9 +20,8 @@ export default class User extends AbstractInstruction implements Committable {
     /** Returns a new `User` instruction of given user and optionally the user group. */
     public static of(user: string, group?: string): User {
         Strict.notNull(user);
-        const maybeGroup = Optional.ofNullable(group);
-        return maybeGroup.isEmpty()
-            ? new User(user)
-            : new User(`${user}:${maybeGroup.get()}`);
+        return group
+            ? new User(`${user}:${group}`)
+            : new User(user)
     }
 }
