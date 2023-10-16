@@ -6,7 +6,7 @@
 
 import AbstractInstruction from "./AbstractInstruction";
 import Committable from "./Committable";
-import {Optional, Strict} from "@raccoons-co/ethics";
+import {Strict} from "@raccoons-co/ethics";
 import Cmd from "./Cmd";
 
 /**

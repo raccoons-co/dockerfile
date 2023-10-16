@@ -6,7 +6,7 @@
 
 import AbstractInstruction from "./AbstractInstruction";
 import Committable from "./Committable";
-import {Optional, Strict} from "@raccoons-co/ethics";
+import {Strict} from "@raccoons-co/ethics";
 
 /**
  * Represents an {@link https://docs.docker.com/engine/reference/builder/#user | USER} instruction.
@@ -22,6 +22,6 @@ export default class User extends AbstractInstruction implements Committable {
         Strict.notNull(user);
         return group
             ? new User(`${user}:${group}`)
-            : new User(user)
+            : new User(user);
     }
 }

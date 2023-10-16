@@ -23,7 +23,7 @@ export default class Arg extends AbstractInstruction implements Committable {
         Strict.notNull(name);
         return defaultValue
             ? new Arg(`${name}=${defaultValue}`)
-            : new Arg(name)
+            : new Arg(name);
     }
 
     /** Returns a new `Arg` instruction of given automatic platform variable name. */
