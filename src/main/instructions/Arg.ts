@@ -4,7 +4,7 @@
  * @license MIT
  */
 
-import {Optional, Strict} from "@raccoons-co/ethics";
+import {Strict} from "@raccoons-co/ethics";
 import AbstractInstruction from "./AbstractInstruction";
 import Committable from "./Committable";
 import {AutomaticArg} from "./AutomaticArg";
@@ -21,10 +21,9 @@ export default class Arg extends AbstractInstruction implements Committable {
     /** Returns a new `Arg` instruction of given name and optional default value. */
     public static of(name: string, defaultValue?: string): Arg {
         Strict.notNull(name);
-        const maybeDefaultValue = Optional.ofNullable(defaultValue);
-        return maybeDefaultValue.isEmpty()
-            ? new Arg(name)
-            : new Arg(`${name}=${maybeDefaultValue.get()}`);
+        return defaultValue
+            ? new Arg(`${name}=${defaultValue}`)
+            : new Arg(name);
     }
 
     /** Returns a new `Arg` instruction of given automatic platform variable name. */

@@ -34,5 +34,4 @@ export default class Expose extends AbstractInstruction implements Committable {
         Strict.checkArgument(Number.isInteger(port));
         Strict.checkArgument(port >= 0 && port <= 65535, `${port} Illegal port number `);
     }
-
 }

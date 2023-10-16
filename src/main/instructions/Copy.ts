@@ -6,7 +6,7 @@
 
 import AbstractInstruction from "./AbstractInstruction";
 import Committable from "./Committable";
-import {Optional, Strict} from "@raccoons-co/ethics";
+import {Strict} from "@raccoons-co/ethics";
 import BuildStage from "../BuildStage";
 
 /**
@@ -14,8 +14,8 @@ import BuildStage from "../BuildStage";
  */
 export default class Copy extends AbstractInstruction implements Committable {
 
-    private constructor(copyArgs: string) {
-        super("COPY", copyArgs);
+    private constructor(instructionAgruments: string) {
+        super("COPY", instructionAgruments);
     }
 
     /** Returns a new `Copy` instruction of given source and destination arguments. */
@@ -48,9 +48,8 @@ export default class Copy extends AbstractInstruction implements Committable {
         Strict.notNull(source);
         Strict.notNull(destination);
         Strict.notNull(chown);
-        const maybeChmod = Optional.ofNullable(chmod);
-        return maybeChmod.isEmpty()
-            ? new Copy(`--chown=${chown} ${source} ${destination}`)
-            : new Copy(`--chown=${chown} --chmod=${chmod} ${source} ${destination}`);
+        return chmod
+            ? new Copy(`--chown=${chown} --chmod=${chmod} ${source} ${destination}`)
+            : new Copy(`--chown=${chown} ${source} ${destination}`);
     }
 }

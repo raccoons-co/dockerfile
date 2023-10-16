@@ -2,7 +2,6 @@
  *  Copyright 2023, Raccoons. Developing simple way to change.
  *
  *  @license MIT
- *
  */
 
 import AbstractInstruction from "./AbstractInstruction";
@@ -23,5 +22,4 @@ export default class Volume extends AbstractInstruction implements Committable {
         Strict.notNull(data);
         return new Volume(JSON.stringify(data));
     }
-
 }

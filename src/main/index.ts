@@ -5,6 +5,7 @@ import BuildStageBuilder from "./BuildStageBuilder";
 import InitBuildStageBuilder from "./InitBuildStageBuilder";
 import DockerfileInstruction from "./DockerfileInstruction";
 import Committable from "./instructions/Committable";
+import Add from "./instructions/Add";
 import Arg from "./instructions/Arg";
 import {AutomaticArg} from "./instructions/AutomaticArg";
 import Cmd from "./instructions/Cmd";
@@ -38,6 +39,7 @@ export {
     DockerfileBuilder,
     DockerfileInstruction,
     Committable,
+    Add,
     Arg,
     AutomaticArg,
     Cmd,

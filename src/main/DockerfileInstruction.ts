@@ -11,6 +11,10 @@ import DockerfileWriter from "./DockerfileWriter";
  */
 export default interface DockerfileInstruction {
 
-    /** Accepts DockerfileWriter for adding the instruction to the file content. */
+    /**
+     * Accepts DockerfileWriter for adding the instruction to the file content.
+     *
+     * @internal
+     */
     accept(writer: DockerfileWriter): void;
 }

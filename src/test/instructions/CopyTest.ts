@@ -42,5 +42,4 @@ export default class CopyTest {
         const instruction = Copy.withChown("lib/test/given/", "./lib/test/given/", "node:node", "644");
         assert.equal(instruction.toString(), "COPY --chown=node:node --chmod=644 lib/test/given/ ./lib/test/given/");
     }
-
 }
